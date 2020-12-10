@@ -1,0 +1,11 @@
+
+RewriteEngine on
+RewriteRule ^projects(/(.*)) product-detail.php?id=$2 [L]
+RewriteRule ^blog(/(.*)) blog-detail.php?id=$2 [L]
+
+ 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
