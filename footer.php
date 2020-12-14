@@ -111,7 +111,6 @@
     <!-- footer -->
 
     <!-- Modal -->
-
     <div class="modal fade" id="quickInquery" tabindex="-1" role="dialog" aria-labelledby="quickInqueryLabel" aria-hidden="true">
 
         <div class="modal-dialog modal-lg" role="document">
@@ -132,7 +131,7 @@
 
                 <div class="modal-body get-in-touch mb-0">
 
-                    <form class="form-wrap">
+                    <form class="form-wrap" method="POST" id="submitEnquiryForm">
 
                         <div class="row">
 
@@ -146,7 +145,7 @@
 
                                     </div>
 
-                                    <input type="text" class="form-control" placeholder="Name *">
+                                    <input type="text" class="form-control" placeholder="Name *" id="name" name="name" required>
 
                                 </div>
 
@@ -162,7 +161,7 @@
 
                                     </div>
 
-                                    <input type="text" class="form-control" placeholder="Contact Number *">
+                                    <input type="number" class="form-control" placeholder="Contact Number *" id="contact_number" name="contact_number" required>
 
                                 </div>
 
@@ -178,7 +177,7 @@
 
                                     </div>
 
-                                    <input type="text" class="form-control" placeholder="Email Address *">
+                                    <input type="email" class="form-control" placeholder="Email Address *" id="email" name="email" required>
 
                                 </div>
 
@@ -194,9 +193,9 @@
 
                                     </div>
 
-                                    <select class="custom-select form-control">
+                                    <select class="custom-select form-control"  id="requirement" name="requirement" required>
 
-                                        <option selected>Requirement</option>
+                                        <option value="" selected>Requirement</option>
 
                                         <option value="1">One</option>
 
@@ -220,22 +219,31 @@
 
                                     </div>
 
-                                    <textarea rows="4" class="form-control" placeholder="Username"></textarea>
+                                    <textarea type="textarea" rows="4" class="form-control" placeholder="Message"  id="message" name="message" required></textarea>
 
                                 </div>
 
                             </div>
 
                             <div class="col-12 text-center">
-
-                                <button type="submit" class="button">Submit</button>
+							<?php $parts = explode("/", $_SERVER['REQUEST_URI']); ?>
+								<input type="hidden" id="projectSlug" value="<?php echo end($parts); ?>" name="projectSlug" />
+                                <button type="submit" class="button" >Submit</button>
 
                             </div>
 
                         </div>
 
                     </form>
+					<div id="success_message" style="width:100%; height:100%; display:none; ">
+							<h5>Enquiry sent successfully!</h5>
+					</div>
+					<div id="error_message"
+					style="width:100%; height:100%; display:none; ">
+						<h5>Error</h5>
+						Sorry there was an error sending your form.
 
+					</div>
                 </div>
 
             </div>
@@ -425,7 +433,45 @@
     <script src="js/jquery.mousewheel.min.js"></script>
 
     <script src="js/custom.js"></script>
+	<script>
+	
+	$(document).ready(function () {
+		$('#submitEnquiryForm').submit(function(e)
+		{
+			e.preventDefault();
 
+			$form = $(this);
+			$.ajax({
+				type: "POST",
+				url: './submitEnquiry.php',
+				data: $form.serialize(),
+				beforeSend: function () {
+					$('.submitBtn').attr("disabled","disabled");
+					$('.modal-body').css('opacity', '.5');
+				},
+				success: function(data)
+				{
+					var $response = $.parseJSON(data);
+					if($response.result == 'success')
+					{
+						$($form).hide();
+						$('#success_message').show();
+						$('#error_message').hide();
+					}
+					else{
+						$($form).hide();
+						$('#success_message').hide();
+						$('#error_message').show();
+
+					}
+				}
+			});
+
+		  });
+	});
+	</script>
+	
+	
 </body>
 
 
