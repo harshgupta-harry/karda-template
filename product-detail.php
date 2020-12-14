@@ -1,12 +1,17 @@
     <?php 
+    
     $id = htmlspecialchars($_GET["id"]);
     include ('./composer/firebase_db.php');
+    include ('./config-file.php');
 	//template data fetch from firebase
     $projectDetails = $database->getReference('template/userData/featured/data/projects/'.$id)->getValue();
     $headerDetails = $database->getReference('template/userData/header/data')->getValue();
     
     $pageHeading = $projectDetails['title']['text'];
-    include 'header3.php';?> 
+    $imageBaseDirectory = $imageBaseDirectory.$projectDetails['slug']['text'];
+    include 'header3.php';
+    
+    ?> 
 
     <section class="detail-breadcrumb">
 
@@ -87,10 +92,13 @@
 
                         
                         <?php if($projectDetails['image']['name']){
-                                    echo '<img src="'.$projectDetails['image']['name'].'">';
+                                    echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['image']['name'].'">';
                                 } else {
                                     echo '<img src="images/harisiddhi.jpg" class="w-100"> ';
-                                } ?>
+                                } 
+                                
+                               
+                                ?>
 
                     </div>
 
@@ -146,7 +154,7 @@
     
                             <div class="card-img">';
                                 if($projectDetails['amenities'][$i]['image']['name']){
-                                    echo '<img src="'.$projectDetails['amenities'][$i]['image']['name'].'">';
+                                    echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['amenities'][$i]['image']['name'].'">';
                                 } else {
                                     echo '<img src="images/amenity-icon-1.png">';
                                 }
@@ -205,7 +213,7 @@
                         <div class="plan-block">';
     
                         if($projectDetails['floorPlans'][$i]['image']['name']){
-                            echo '<img src="'.$projectDetails['floorPlans'][$i]['image']['name'].'">';
+                            echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['floorPlans'][$i]['image']['name'].'">';
                         } else {
                             echo '<img src="images/plan1.jpg">';
                         }

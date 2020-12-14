@@ -234,7 +234,7 @@
 
                 <div class="img-box">';
                     if($projectDetails['banner'][$i]['image']['name']){
-                        echo '<img src="'.$projectDetails['banner'][$i]['image']['name'].'" class="w-100">';
+                        echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['banner'][$i]['image']['name'].'" class="w-100">';
                     } else {
                         echo '<img src="images/banner.jpg" class="w-100">';
                     }

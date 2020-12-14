@@ -1,4 +1,5 @@
 <?php
+
 $section = $data["featured"]["data"];
 
 echo '<section class="featured-projects">
@@ -28,7 +29,7 @@ echo '<section class="featured-projects">
     
                     <div class="featured-project-img">';
                         if($value['image']['name']){
-                            echo '<img src="'.$value['image']['name'].'" class="w-100">';
+                            echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }
@@ -54,6 +55,7 @@ echo '<section class="featured-projects">
                 </div>
     
             </div>';
+            
             }
         
           

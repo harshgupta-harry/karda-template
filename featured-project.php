@@ -5,6 +5,8 @@ include ('./composer/firebase_db.php');
 $headerDetails = $database->getReference('template/userData/header/data')->getValue();
 
 $addBaseTag = false;
+include ('./config-file.php');
+
 include 'header2.php';
 
 
@@ -40,10 +42,6 @@ if (isset($_GET['page'])) {
     $currentPage = 1;
 }
 
-// $status = 'all';
-// $type = 'all';
-// $location = 'all';
-
 $location;
 $type;
 $status;
@@ -65,7 +63,7 @@ if (isset($_GET['status'])) {
 } else {
     $status = 'Select Status';
 }
-// function filter($allProjectsBackup, $location, $type, $status, $allProjects, $totalNumberOfProjects, $numberOfItemsOnAPage){
+
     foreach($allProjectsBackup as $slug => $value) { 
         if($location != 'Select Location' && $value['location']['text'] != $location){
             unset($allProjects[$slug]);
@@ -79,9 +77,6 @@ if (isset($_GET['status'])) {
         $totalNumberOfProjects = count($allProjects);
         $totalPages = ceil($totalNumberOfProjects/$numberOfItemsOnAPage);
     }
-// }
-
-// filter($allProjectsBackup, $location, $type, $status, $allProjects, $totalNumberOfProjects, $numberOfItemsOnAPage);
 
 ?>
 
@@ -154,27 +149,7 @@ if (isset($_GET['status'])) {
                                 $type=$_POST['type'];
                                 $status=$_POST['status'];
                                 echo "<script> location.href='http://localhost/karda-template/featured-project?location=".$location."&type=".$type."&status=".$status."'; </script>";
-                                // if($location == 'all' && $type == 'all' && $status == 'all'){
-                                    
-                                //     $allProjects = $database->getReference('template/userData/featured/data/projects/')->getValue();
-                                //     $totalNumberOfProjects = count($allProjects);
-                                //     $totalPages = ceil($totalNumberOfProjects/$numberOfItemsOnAPage);
-                                // } else{
-                                //     foreach($allProjectsBackup as $slug => $value) { 
-                                //         if($location != 'all' && $value['location']['text'] != $location){
-                                //             unset($allProjects[$slug]);
-                                //         }
-                                //         if($type != 'all' && $value['type']['text'] != $type){
-                                //             unset($allProjects[$slug]);
-                                //         }
-                                //         if($status != 'all' && $value['status']['text'] != $status){
-                                //             unset($allProjects[$slug]);
-                                //         }
-                                //         $totalNumberOfProjects = count($allProjects);
-                                //         $totalPages = ceil($totalNumberOfProjects/$numberOfItemsOnAPage);
-                                //     }
-                                    
-                                // }
+                              
                             } 
                             
                     echo '</form>'; ?>
@@ -216,7 +191,7 @@ if (isset($_GET['status'])) {
                         <div class="featured-project-img">';
 
                         if($value['image']['name']){
-                            echo '<img src="'.$value['image']['name'].'" class="w-100">';
+                            echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }

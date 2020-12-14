@@ -230,7 +230,7 @@ echo '<div>
 
     <div class="img-box">';
         if($data['banner']['data']['arrayOne']['data'][$i]['image']['name']){
-          echo '<img src="'.$data['banner']['data']['arrayOne']['data'][$i]['image']['name'].'" class="w-100">';
+          echo '<img src="'.$imageBaseDirectory.$data['banner']['data']['arrayOne']['data'][$i]['image']['name'].'" class="w-100">';
         } else {
           echo '<img src="images/banner.jpg" class="w-100">';
         }

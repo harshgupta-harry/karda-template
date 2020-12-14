@@ -1,4 +1,5 @@
 <?php 
+include ('./config-file.php');
 include ('./composer/firebase_db.php');
 //template data fetch from firebase
 $data = $database->getReference('template/userData')->getValue();

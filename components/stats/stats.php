@@ -16,7 +16,7 @@ echo '<section class="company-work">
 
                 <div class="work-icon">';
                     if($data['stats']['data']['arrayOne']['data'][$i]['image']['name']){
-                        echo '<img src="'.$data['stats']['data']['arrayOne']['data'][$i]['image']['name'].'">';
+                        echo '<img src="'.$imageBaseDirectory.$data['stats']['data']['arrayOne']['data'][$i]['image']['name'].'">';
                     } else {
                         echo '<img src="images/projects.png">';
                     }

@@ -29,7 +29,7 @@ echo '<section class="news-offers">
 
                 
                 if($value['image']['name']){
-                    echo '<img src="'.$value['image']['name'].'" class="w-100">';
+                    echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                 } else {
                     echo '<img src="images/niketan.jpg" class="w-100">';
                 }
