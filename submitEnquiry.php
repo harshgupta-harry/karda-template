@@ -72,6 +72,9 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && (!filter_var($_POST['ema
         $status['result'] = 'error';
     } 
     
-    // Output status
+   
+}else{
+        $status['result'] = 'error';
+    } 
+	// Output status
     echo json_encode($status);die;
-}

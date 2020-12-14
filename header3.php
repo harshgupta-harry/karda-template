@@ -266,7 +266,7 @@
 
                             <div class="col-12 col-md-4 text-xl-right">
 
-                                <a class="button enquiry" data-toggle="modal" data-target="#quickInquery">Quick enquiry <i class="fas fa-caret-right"></i></a>
+                                <a class="button enquiry" data-id="'.$projectDetails['slug']['text'].'" data-toggle="modal" data-target="#quickInquery">Quick enquiry <i class="fas fa-caret-right"></i></a>
 
                                 <a href="#" class="button brouchure" data-toggle="modal" data-target="#ebrouchure">Request E-Brouchure <i class="fas fa-caret-right"></i></a>
 

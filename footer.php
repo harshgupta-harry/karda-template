@@ -226,8 +226,7 @@
                             </div>
 
                             <div class="col-12 text-center">
-							<?php $parts = explode("/", $_SERVER['REQUEST_URI']); ?>
-								<input type="hidden" id="projectSlug" value="<?php echo end($parts); ?>" name="projectSlug" />
+								<input type="hidden" id="projectSlug" value="" name="projectSlug" />
                                 <button type="submit" class="button" >Submit</button>
 
                             </div>
@@ -436,10 +435,16 @@
 	<script>
 	
 	$(document).ready(function () {
+		$(document).on("click", ".enquiry", function () {
+			var projectSlug = $(this).data('id');
+			console.log(projectSlug);
+			$(".modal-body #projectSlug").val( projectSlug );
+		});
+
 		$('#submitEnquiryForm').submit(function(e)
 		{
 			e.preventDefault();
-
+			
 			$form = $(this);
 			$.ajax({
 				type: "POST",
