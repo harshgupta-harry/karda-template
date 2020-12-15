@@ -161,7 +161,7 @@
 
                                     </div>
 
-                                    <input type="number" class="form-control" placeholder="Contact Number *" id="contact_number" name="contact_number" required>
+                                    <input type="number" class="form-control" placeholder="Contact Number *" id="contact_number" name="contact_number" required maxlength="10">
 
                                 </div>
 
@@ -243,6 +243,7 @@
 						Sorry there was an error sending your form.
 
 					</div>
+				
                 </div>
 
             </div>
@@ -460,19 +461,21 @@
 					if($response.result == 'success')
 					{
 						$($form).hide();
-						$('#success_message').show();
+						 $('#success_message').show();
 						$('#error_message').hide();
 					}
 					else{
 						$($form).hide();
 						$('#success_message').hide();
-						$('#error_message').show();
-
+						$('#error_message').show(); 
 					}
 				}
 			});
 
-		  });
+		});
+		$('#quickInquery').on('hidden.bs.modal', function () {
+			location.reload();
+		})
 	});
 	</script>
 	

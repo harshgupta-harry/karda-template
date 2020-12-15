@@ -25,7 +25,7 @@ if(!empty($_POST['name']) && !empty($_POST['email']) && (!filter_var($_POST['ema
 
 	// Create a key for a new post
 
-	$newPostKey = $database->getReference('enquiry/projects/'.$projectSlug)->push($postData)->getKey();
+	$newPostKey = $database->getReference('enquiry/'.$projectSlug)->push($postData)->getKey();
 	if($newPostKey){
 		
 		/*
