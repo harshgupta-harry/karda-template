@@ -25,13 +25,13 @@
     <!--- Responsive Menu:Begin -->
     <a href="index.html" class="mobile-logo d-lg-none"><img src="images/logo.png"></a>
     <div class="responsive-menu">
-        <nav>
+    <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li>
-                    <a href="javascript:void(0)">Projects</a>
+                    <a href="featured-project.php">Projects</a>
                     <ul>
-                    <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
+                        <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
                         <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
                         <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
                     </ul>
@@ -138,13 +138,13 @@
                 <nav class="navbar navbar-expand-lg wow fadeInLeft">
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li>
-                                <a href="javascript:void(0)">Projects</a>
+                                <a href="featured-project.php">Projects</a>
                                 <ul>
                                 <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
-                        <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
-                        <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
+                                <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
+                                <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
                                 </ul>
                             </li>
                             <li>

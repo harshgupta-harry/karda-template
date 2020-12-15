@@ -31,11 +31,11 @@ if($addBaseTag){
     <div class="responsive-menu">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li>
-                    <a href="javascript:void(0)">Projects</a>
+                    <a href="featured-project.php">Projects</a>
                     <ul>
-                    <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
+                        <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
                         <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
                         <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
                     </ul>
@@ -142,13 +142,13 @@ if($addBaseTag){
                 <nav class="navbar navbar-expand-lg wow fadeInLeft">
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li>
-                                <a href="javascript:void(0)">Projects</a>
+                                <a href="featured-project.php">Projects</a>
                                 <ul>
                                 <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
-                        <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
-                        <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
+                                <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
+                                <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
                                 </ul>
                             </li>
                             <li>
