@@ -234,16 +234,7 @@
                         </div>
 
                     </form>
-					<div id="success_message" style="width:100%; height:100%; display:none; ">
-							<h5>Enquiry sent successfully!</h5>
-					</div>
-					<div id="error_message"
-					style="width:100%; height:100%; display:none; ">
-						<h5>Error</h5>
-						Sorry there was an error sending your form.
-
-					</div>
-				
+					
                 </div>
 
             </div>
@@ -274,7 +265,7 @@
 
                 <div class="modal-body get-in-touch mb-0">
 
-                    <form class="form-wrap">
+                    <form class="form-wrap" method="POST" id="submitEbrouchureForm">
 
                         <div class="row">
 
@@ -288,7 +279,7 @@
 
                                     </div>
 
-                                    <input type="text" class="form-control" placeholder="Name *">
+                                    <input type="text" class="form-control" placeholder="Name *" id="name" name="name" required>
 
                                 </div>
 
@@ -304,7 +295,7 @@
 
                                     </div>
 
-                                    <input type="text" class="form-control" placeholder="Contact Number *">
+                                    <input type="text" class="form-control" placeholder="Contact Number *"  id="contact_number" name="contact_number" required maxlength="10">
 
                                 </div>
 
@@ -320,7 +311,7 @@
 
                                     </div>
 
-                                    <input type="text" class="form-control" placeholder="Email Address *">
+                                    <input type="text" class="form-control" placeholder="Email Address *" id="email" name="email" required >
 
                                 </div>
 
@@ -336,9 +327,9 @@
 
                                     </div>
 
-                                    <select class="custom-select form-control">
+                                    <select class="custom-select form-control" id="requirement" name="requirement"  >
 
-                                        <option selected>Requirement</option>
+                                        <option value="" selected>Requirement</option>
 
                                         <option value="1">One</option>
 
@@ -362,14 +353,14 @@
 
                                     </div>
 
-                                    <textarea rows="4" class="form-control" placeholder="Username"></textarea>
+                                    <textarea rows="4" class="form-control" placeholder="Message"  id="message" name="message" required></textarea>
 
                                 </div>
 
                             </div>
 
                             <div class="col-12 text-center">
-
+								<input type="hidden" id="projectSlug" value="" name="projectSlug" />
                                 <button type="submit" class="button">Submit</button>
 
                             </div>
@@ -431,54 +422,14 @@
     <script src="js/lightgallery-all.min.js"></script>
 
     <script src="js/jquery.mousewheel.min.js"></script>
-
+	
     <script src="js/custom.js"></script>
-	<script>
 	
-	$(document).ready(function () {
-		$(document).on("click", ".enquiry", function () {
-			var projectSlug = $(this).data('id');
-			console.log(projectSlug);
-			$(".modal-body #projectSlug").val( projectSlug );
-		});
+	<link href="css/toastr.css" rel="stylesheet">
 
-		$('#submitEnquiryForm').submit(function(e)
-		{
-			e.preventDefault();
-			
-			$form = $(this);
-			$.ajax({
-				type: "POST",
-				url: './submitEnquiry.php',
-				data: $form.serialize(),
-				beforeSend: function () {
-					$('.submitBtn').attr("disabled","disabled");
-					$('.modal-body').css('opacity', '.5');
-				},
-				success: function(data)
-				{
-					var $response = $.parseJSON(data);
-					if($response.result == 'success')
-					{
-						$($form).hide();
-						 $('#success_message').show();
-						$('#error_message').hide();
-					}
-					else{
-						$($form).hide();
-						$('#success_message').hide();
-						$('#error_message').show(); 
-					}
-				}
-			});
-
-		});
-		$('#quickInquery').on('hidden.bs.modal', function () {
-			location.reload();
-		})
-	});
-	</script>
+	<script src="js/toastr.js"></script>
 	
+	<script src="js/app.js"></script>
 	
 </body>
 
