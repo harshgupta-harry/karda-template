@@ -6,7 +6,7 @@ $headerDetails = $database->getReference('template/userData/header/data')->getVa
 
 $addBaseTag = false;
 include ('./config-file.php');
-
+$pageName = 'Blogs';
 include 'header2.php';
 
 $allBlogs = $database->getReference('template/userData/blogs/data/blogs/')->getValue();
@@ -73,7 +73,7 @@ if (isset($_GET['category'])) {
 
                             
                             if($value['image']['name']){
-                                echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                                echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                             } else {
                                 echo '<img src="images/blog1.jpg" class="w-100">';
                             }
@@ -124,7 +124,7 @@ if (isset($_GET['category'])) {
 
                                     
                                     if($value['image']['name']){
-                                        echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                                        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                                     } else {
                                         echo '<img src="images/post1.jpg" class="w-100">';
                                     }

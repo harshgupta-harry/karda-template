@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <title>Karda Constructions</title>
-    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA3tT7v5CL8IVpg8MhNuHs5bDfK1EvTrhc" type="text/javascript"></script>
 </head>
 
 <body>

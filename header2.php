@@ -232,7 +232,14 @@ if($addBaseTag){
                     <div class="col-12 col-md-6 wow fadeInRight" data-wow-delay="0.3s">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                            <?php 
+                                if(isset($pageName)){
+                                    echo '<li class="breadcrumb-item active" aria-current="page">'.$pageName.'</li>';
+                                } else {
+                                    echo '<li class="breadcrumb-item active" aria-current="page">Contact Us</li>';
+                                }
+
+                            ?>
                         </ol>
                     </div>
                 </div>

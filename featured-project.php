@@ -191,7 +191,7 @@ if (isset($_GET['status'])) {
                         <div class="featured-project-img">';
 
                         if($value['image']['name']){
-                            echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }

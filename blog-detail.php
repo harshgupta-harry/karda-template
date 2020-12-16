@@ -10,7 +10,7 @@ $id = htmlspecialchars($_GET["id"]);
 $blogDetails = $database->getReference('template/userData/blogs/data/blogs/'.$id)->getValue();
 $pageHeading = $blogDetails['title']['text'];
 include ('./config-file.php');
-
+$pageName = 'Blogs / '.$blogDetails['slug']['text'];
 include 'header2.php';
 $allBlogs = $database->getReference('template/userData/blogs/data/blogs/')->getValue();
 $blogCategory = [];
@@ -30,7 +30,7 @@ foreach($allBlogs as $name => $value) {
                             
                             <?php
                             if($blogDetails['image']['name']){
-                                echo '<img src="'.$imageBaseDirectory.$blogDetails['slug']['text'].'/'.$blogDetails['image']['name'].'" class="w-100">';
+                                echo '<img src="'.$imageBaseDirectory.'Blog/'.$blogDetails['slug']['text'].'/'.$blogDetails['image']['name'].'" class="w-100">';
                             } else {
                                 echo '<img src="images/blog1.jpg" class="w-100">';
                             }
@@ -81,7 +81,7 @@ foreach($allBlogs as $name => $value) {
 
                                     
                                     if($value['image']['name']){
-                                        echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                                        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                                     } else {
                                         echo '<img src="images/post1.jpg" class="w-100">';
                                     }

@@ -13,8 +13,12 @@ $locationData = $data['featured']['data']['projects'];
 $locationArray = [];
 $index = 0;
 foreach($locationData as $x => $value) {
-  $locationArray[$index] = [$value['location']['text'], $value['location']['longitude'], $value['location']['latitude']];
-  $index++;
+  if($value['location']['text'] && $value['location']['longitude'] && $value['location']['latitude']){
+     
+    $locationArray[$index] = [$value['location']['text'], $value['location']['longitude'], $value['location']['latitude']];
+    $index++;
+  }
+  
 }
 $locationJSON = json_encode($locationArray);
 

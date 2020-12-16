@@ -15,10 +15,13 @@ echo '<section class="news-offers">
     </div>
 
     <div class="news-slider wow fadeInUp" data-wow-delay="0.3s">';
-
+    $index = 1;
     foreach($section['blogs'] as $key => $value) {
         if($value['category']['text'] !== 'News & Offers'){
             continue;
+        }
+        if($index > 6){
+            exit;
         }
         
         echo '<div>
@@ -29,7 +32,7 @@ echo '<section class="news-offers">
 
                 
                 if($value['image']['name']){
-                    echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                    echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                 } else {
                     echo '<img src="images/niketan.jpg" class="w-100">';
                 }
@@ -51,6 +54,7 @@ echo '<section class="news-offers">
         </div>
 
     </div>';
+    $index ++;
     }
     
 

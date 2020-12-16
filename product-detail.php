@@ -8,7 +8,8 @@
     $headerDetails = $database->getReference('template/userData/header/data')->getValue();
     
     $pageHeading = $projectDetails['title']['text'];
-    $imageBaseDirectory = $imageBaseDirectory.$projectDetails['slug']['text'];
+    
+    $imageBaseDirectory = $imageBaseDirectory.'Project/'.$projectDetails['slug']['text'];
     include 'header3.php';
     
     ?> 

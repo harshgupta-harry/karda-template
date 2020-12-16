@@ -21,15 +21,18 @@ echo '<section class="featured-projects">
         </div>';
 
         
-        
+            $index = 1;
             foreach($section['projects'] as $key => $value) {
+                if($index > 6){
+                    exit;
+                }
                 echo '<div class="col-12 col-sm-6 wow fadeInLeft" data-wow-delay="0.3s">
 
                 <div class="featured-project">
     
                     <div class="featured-project-img">';
                         if($value['image']['name']){
-                            echo '<img src="'.$imageBaseDirectory.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }
@@ -55,7 +58,7 @@ echo '<section class="featured-projects">
                 </div>
     
             </div>';
-            
+            $index ++;
             }
         
           
