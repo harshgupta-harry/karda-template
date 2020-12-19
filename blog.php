@@ -102,12 +102,8 @@ if (isset($_GET['category'])) {
             }
                 ?>
             </div>
-                <div class="col-12 col-lg-4">
-
-                    <div class="sidebar">
-
-                        
-
+            <div class="col-12 col-lg-4">
+    <div class="sidebar">
                         <div class="recent-post wow fadeInRight" data-wow-delay="0.3s">
 
                             <h4 class="recent-blog-title">Recent Posts</h4>
@@ -169,6 +165,8 @@ if (isset($_GET['category'])) {
                     </div>
 
                 </div>
+
+
 
             </div>
 

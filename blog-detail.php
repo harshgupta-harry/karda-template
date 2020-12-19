@@ -11,6 +11,8 @@ $blogDetails = $database->getReference('template/userData/blogs/data/blogs/'.$id
 $pageHeading = $blogDetails['title']['text'];
 include ('./config-file.php');
 $pageName = 'Blogs / '.$blogDetails['slug']['text'];
+$metaTags = $blogDetails['metaTags']['text'];
+$metaDescription = $blogDetails['metaDescription']['text'];
 include 'header2.php';
 $allBlogs = $database->getReference('template/userData/blogs/data/blogs/')->getValue();
 $blogCategory = [];

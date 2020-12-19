@@ -10,6 +10,8 @@
     $pageHeading = $projectDetails['title']['text'];
     
     $imageBaseDirectory = $imageBaseDirectory.'Project/'.$projectDetails['slug']['text'];
+    $metaTags = $projectDetails['metaTags']['text'];
+    $metaDescription = $projectDetails['metaDescription']['text'];
     include 'header3.php';
     
     ?> 

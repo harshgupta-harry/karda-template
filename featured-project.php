@@ -6,12 +6,12 @@ $headerDetails = $database->getReference('template/userData/header/data')->getVa
 
 $addBaseTag = false;
 include ('./config-file.php');
-
+$pageName = 'Projects';
 include 'header2.php';
+ 
 
-
-$allProjects = $database->getReference('template/userData/featured/data/projects/')->getValue();
-$allProjectsBackup = $database->getReference('template/userData/featured/data/projects/')->getValue();
+$allProjects = $database->getReference('template/userData/featured/data/projects/')->orderByChild('title/text')->limitToFirst(2)->getValue();
+$allProjectsBackup = $database->getReference('template/userData/featured/data/projects/')->orderByChild('title/text')->limitToFirst(2)->getValue();
 
 $startLoopAt = 1;
 $totalNumberOfProjects = count($allProjects);
@@ -98,7 +98,9 @@ if (isset($_GET['status'])) {
                             <div class="col-md-3 mb-3">
 
                                 <select class="custom-select" name="status">
-                                <option selected value="'.$status.'">'.$status.'</option>';
+                                <option selected value="'.$status.'">'.$status.'</option>
+                                <option value="Select Status">All</option>';
+
 
                                 foreach($statusCategory as $name => $value) {
                                     echo '<option value="'.$value.'">'.$name.'</option>';
@@ -113,7 +115,8 @@ if (isset($_GET['status'])) {
 
                                 <select class="custom-select" name="type">
 
-                                    <option selected value="'.$type.'">'.$type.'</option>';
+                                    <option selected value="'.$type.'">'.$type.'</option>
+                                    <option value="Select Flat Type">All</option>';
                                     foreach($typeCategory as $name => $value) {
                                         echo '<option value="'.$value.'">'.$name.'</option>';
                                     }
@@ -126,7 +129,8 @@ if (isset($_GET['status'])) {
 
                                 <select class="custom-select" name="location">
 
-                                    <option selected value="'.$location.'">'.$location.'</option>';
+                                    <option selected value="'.$location.'">'.$location.'</option>
+                                    <option value="Select Location">All</option>';
 
                                     foreach($locationCategory as $name => $value) {
                                         echo '<option value="'.$value.'">'.$name.'</option>';
@@ -148,6 +152,7 @@ if (isset($_GET['status'])) {
                                 $location=$_POST['location'];
                                 $type=$_POST['type'];
                                 $status=$_POST['status'];
+                                
                                 echo "<script> location.href='http://localhost/karda-template/featured-project?location=".$location."&type=".$type."&status=".$status."'; </script>";
                               
                             } 
