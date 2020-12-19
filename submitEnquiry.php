@@ -108,7 +108,7 @@ if($action == 'ebrouchureForm'){
 
 		// Create a key for a new post
 
-		$newPostKey = $database->getReference('template/userData/featured/data/brouchure/'.$projectSlug)->push($postData)->getKey();
+		$newPostKey = $database->getReference('brouchure/'.$projectSlug)->push($postData)->getKey();
 		if($newPostKey){
 			
 			/*
@@ -151,7 +151,11 @@ if($action == 'ebrouchureForm'){
 				$response['result'] = 'error';
 			}*/
 			$projectDetails = $database->getReference('template/userData/featured/data/projects/'.$projectSlug)->getValue();
-			$response['brochureLink'] = $projectDetails['brochure']['text'];
+			// Declare a variable and initialize 
+			// it with URL 
+			$url = $projectDetails['brochure']['text']; 
+					
+			$response['brochureLink'] = addHttp($url);
 			$response['result'] = 'success';
 		}else{
 			$response['result'] = 'error';
@@ -164,3 +168,19 @@ if($action == 'ebrouchureForm'){
 		// Output response
 		echo json_encode($response);die;
 }
+
+// Function to add http 
+function addHttp($url) { 
+	
+	// Search the pattern 
+	if (!preg_match("~^(?:f|ht)tps?://~i", $url)) { 
+		
+		// If not exist then add http 
+		$url = "http://" . $url; 
+	} 
+	
+	// Return the URL 
+	return $url; 
+} 
+
+?> 
