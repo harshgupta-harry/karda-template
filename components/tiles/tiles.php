@@ -1,5 +1,6 @@
 <?php
-$section = $data["tiles"]['data'];
+$section = $database->getReference('template/userData/tiles/data/arrayOne/data')->getValue();
+//$section = $data["tiles"]['data'];
 echo '<section class="project-by-city wow fadeInUp" data-wow-delay="0.3s">
 
 <div class="container">
@@ -14,10 +15,10 @@ echo '<section class="project-by-city wow fadeInUp" data-wow-delay="0.3s">
 
                 <div class="city-wrap">';
 
-                $count = count($section['arrayOne']['data']);
-                if($section['arrayOne']['data'][0] != 'true'){  
+                $count = count($section);
+                if($section[0] != 'true'){  
                     for ($i = 0; $i < $count; $i++) {
-                        echo '<a href="#" class="city-name">'.$section['arrayOne']['data'][$i]['title']['text'].'</a>';
+                        echo '<a href="#" class="city-name">'.$section[$i]['title']['text'].'</a>';
                     }
                 }   
                 

@@ -1,3 +1,10 @@
+<?php
+
+$headerData = $database->getReference('template/userData/header/data')->getValue();
+$bannerData = $database->getReference('template/userData/banner/data/arrayOne/data')->getValue();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +25,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <title>Karda Constructions</title>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA3tT7v5CL8IVpg8MhNuHs5bDfK1EvTrhc" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDHhVYjE4DAtknooTdbYZkJbp0r6OfcZJ8" type="text/javascript"></script>
 </head>
 
 <body>
@@ -115,8 +122,8 @@
                             <div class="topbar-right">
                                 <div class="media">
                                     <div class="media-body">
-                                        <?php echo '<a href="tel: '.$data['header']['data']['contactNumber']['text'].'" class="mobile">'.$data['header']['data']['contactNumber']['text'].'</a>'; ?>
-                                        <?php echo '<a href="mailto: '.$data['header']['data']['email']['text'].'" class="email">'.$data['header']['data']['email']['text'].'</a>'; ?>
+                                        <?php echo '<a href="tel: '.$headerData['contactNumber']['text'].'" class="mobile">'.$headerData['contactNumber']['text'].'</a>'; ?>
+                                        <?php echo '<a href="mailto: '.$headerData['email']['text'].'" class="email">'.$headerData['email']['text'].'</a>'; ?>
                                     </div>
                                     <div class="media-img ml-3">
                                         <i class="fas fa-mobile-alt"></i>
@@ -223,14 +230,16 @@
         </div>
         <div class="banner-slider wow fadeInDown">
             <?php 
-                $count = count($data['banner']['data']['arrayOne']['data']);
-                if($data['banner']['data']['arrayOne']['data'][0] != 'true'){  
+                $count = count($bannerData);
+                if($bannerData[0] != 'true'){  
                     for ($i = 0; $i < $count; $i++) {
 echo '<div>
 
     <div class="img-box">';
-        if($data['banner']['data']['arrayOne']['data'][$i]['image']['name']){
-          echo '<img src="'.$imageBaseDirectory.$data['banner']['data']['arrayOne']['data'][$i]['image']['name'].'" class="w-100">';
+        if($bannerData[$i]['image']['name']){
+            $rand = rand();
+          echo '<img src="'.$imageBaseDirectory.$bannerData[$i]['image']['name'].'?rand='.$rand.' class="w-100">';
+          
         } else {
           echo '<img src="images/banner.jpg" class="w-100">';
         }
@@ -245,13 +254,13 @@ echo '<div>
 
                 <div class="col-12 col-md-8 offset-md-1">
 
-                <span class="launching">'.$data['banner']['data']['arrayOne']['data'][$i]['subTitle']['text'].'</span>
+                <span class="launching">'.$bannerData[$i]['subTitle']['text'].'</span>
 
-                    <h1><strong>'.$data['banner']['data']['arrayOne']['data'][$i]['title']['text'].'</strong></h1>
+                    <h1><strong>'.$bannerData[$i]['title']['text'].'</strong></h1>
 
-                    <h2>'.$data['banner']['data']['arrayOne']['data'][$i]['description']['text'].'</h2>
+                    <h2>'.$bannerData[$i]['description']['text'].'</h2>
 
-                    <a href="'.$data['banner']['data']['arrayOne']['data'][$i]['buttonOne']['link']['text'].'" class="button">View project <i class="fas fa-caret-right"></i></a>
+                    <a href="'.$bannerData[$i]['buttonOne']['link']['text'].'" class="button">View project <i class="fas fa-caret-right"></i></a>
 
                 </div>
 

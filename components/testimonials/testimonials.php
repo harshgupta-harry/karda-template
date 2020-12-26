@@ -1,4 +1,7 @@
 <?php
+
+$data = $database->getReference('template/userData/testimonials/data/arrayOne/data')->getValue();
+
 echo '<section class="testimonials">
 
 <div class="container">
@@ -16,15 +19,15 @@ echo '<section class="testimonials">
             </div>
 
             <div class="test-slider">';
-            $count = count($data['testimonials']['data']['arrayOne']['data']);
-                if($data['stats']['data']['arrayOne']['data'][0] != 'true'){  
+            $count = count($data);
+                if($data[0] != 'true'){  
                     for ($i = 0; $i < $count; $i++) {
 
                 echo '<div class="testimonials-desc">
 
-                    <p>'.$data['testimonials']['data']['arrayOne']['data'][$i]['description']['text'].'</p>
+                    <p>'.$data[$i]['description']['text'].'</p>
 
-                    <h4>- '.$data['testimonials']['data']['arrayOne']['data'][$i]['name']['text'].'</h4>
+                    <h4>- '.$data[$i]['name']['text'].'</h4>
 
                 </div>';}}
 

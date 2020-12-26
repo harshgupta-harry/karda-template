@@ -1,15 +1,8 @@
 <?php
-// $locationData = $data['location']['data']['arrayOne']['data'];
-// $locationArray = [];
-// foreach($locationData as $x => $value) {
-  
-//   $locationArray[$x] = [$value['name']['text'], $value['longitude']['text'], $value['latitude']['text']];
-// }
-// $locationJSON = json_encode($locationArray);
 
+$locationData = $database->getReference('template/userData/featured/data/projects/')->getValue();
 
-
-$locationData = $data['featured']['data']['projects'];
+// $locationData = $data['featured']['data']['projects'];
 $locationArray = [];
 $index = 0;
 foreach($locationData as $x => $value) {
@@ -22,7 +15,7 @@ foreach($locationData as $x => $value) {
 }
 $locationJSON = json_encode($locationArray);
 
-
+if($locationArray){
 echo "<section>
 <div id='map' style='height: 400px; width: 100%'></div>
     <script type='text/javascript'>
@@ -59,32 +52,5 @@ echo "<section>
 
 </section>";
 
-
+    }
 ?>
-<!-- echo '<section class="project-location wow fadeInDown" data-wow-delay="0.3s">
-
-<div id="map" style="height: 400px; width: 500px;">
-</div>
-<div class="container">
-
-    <div class="row">
-
-        <div class="col-12">
-
-            <div class="section-title">
-
-                <span class="count">02</span>
-
-                <h2>View Our Project on Live MAP</h2>
-
-                <a href="#" class="button">Explore Now <i class="fas fa-caret-right"></i></a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>'; -->

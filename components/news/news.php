@@ -1,6 +1,10 @@
 <?php
+//$newsBlogs = $database->getReference('template/userData/blogs/data/blogs/')->orderByChild('category/text')->equalTo('News & Offers')->getValue();
 
-$section = $data["blogs"]["data"];
+//print_r($newsBlogs);
+
+$section = $database->getReference('template/userData/blogs/data/blogs/')->orderByChild('category/text')->equalTo('News & Offers')->limitToFirst(5)->getValue();
+//$data["blogs"]["data"];
 
 echo '<section class="news-offers">
 
@@ -16,7 +20,7 @@ echo '<section class="news-offers">
 
     <div class="news-slider wow fadeInUp" data-wow-delay="0.3s">';
     $index = 1;
-    foreach($section['blogs'] as $key => $value) {
+    foreach($section as $key => $value) {
         if($value['category']['text'] !== 'News & Offers'){
             continue;
         }
@@ -32,7 +36,8 @@ echo '<section class="news-offers">
 
                 
                 if($value['image']['name']){
-                    echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                    $rand = rand();
+                    echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                 } else {
                     echo '<img src="images/niketan.jpg" class="w-100">';
                 }
