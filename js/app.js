@@ -59,7 +59,7 @@ $(document).ready(function () {
 	{
 		$form = $(this);
 		var loginWindow = window.open('', 'UserLogin');
-
+		//e.preventDefault();
 		$.ajax({
 			type: "POST",
 			url: './submitEnquiry.php',
