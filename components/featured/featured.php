@@ -1,6 +1,8 @@
 <?php
 
-$section = $data["featured"]["data"];
+$section = $database->getReference('template/userData/featured/data/projects/')->orderByChild('title/text')->limitToFirst(4)->getValue();
+
+// $section = $data["featured"]["data"];
 
 echo '<section class="featured-projects">
 
@@ -22,7 +24,7 @@ echo '<section class="featured-projects">
 
         
             $index = 1;
-            foreach($section['projects'] as $key => $value) {
+            foreach($section as $key => $value) {
                 if($index > 6){
                     exit;
                 }
@@ -32,7 +34,8 @@ echo '<section class="featured-projects">
     
                     <div class="featured-project-img">';
                         if($value['image']['name']){
-                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                            $rand = rand();
+                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['slug']['text'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }

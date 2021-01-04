@@ -1,28 +1,21 @@
 <?php
-// $locationData = $data['location']['data']['arrayOne']['data'];
-// $locationArray = [];
-// foreach($locationData as $x => $value) {
-  
-//   $locationArray[$x] = [$value['name']['text'], $value['longitude']['text'], $value['latitude']['text']];
-// }
-// $locationJSON = json_encode($locationArray);
 
+$locationData = $database->getReference('template/userData/featured/data/locations/')->getValue();
 
-
-$locationData = $data['featured']['data']['projects'];
+// $locationData = $data['featured']['data']['projects'];
 $locationArray = [];
 $index = 0;
 foreach($locationData as $x => $value) {
-  if($value['location']['text'] && $value['location']['longitude'] && $value['location']['latitude']){
+  if($value['location'] && $value['longitude'] && $value['latitude']){
      
-    $locationArray[$index] = [$value['location']['text'], $value['location']['longitude'], $value['location']['latitude']];
+    $locationArray[$index] = [$value['location'], $value['longitude'], $value['latitude'], $value['slug']];
     $index++;
   }
   
 }
 $locationJSON = json_encode($locationArray);
 
-
+if($locationArray){
 echo "<section>
 <div id='map' style='height: 400px; width: 100%'></div>
     <script type='text/javascript'>
@@ -49,7 +42,7 @@ echo "<section>
           'click',
           (function (marker, i) {
             return function () {
-              infowindow.setContent(locations[i][0]);
+              infowindow.setContent(locations[i][0] + '</br>' + '<a href=http://sterlingweb.in/projects/karda/beta/projects/' + locations[i][3] + ' target=_blank >View Project</a>');
               infowindow.open(map, marker);
             };
           })(marker, i)
@@ -59,32 +52,5 @@ echo "<section>
 
 </section>";
 
-
+    }
 ?>
-<!-- echo '<section class="project-location wow fadeInDown" data-wow-delay="0.3s">
-
-<div id="map" style="height: 400px; width: 500px;">
-</div>
-<div class="container">
-
-    <div class="row">
-
-        <div class="col-12">
-
-            <div class="section-title">
-
-                <span class="count">02</span>
-
-                <h2>View Our Project on Live MAP</h2>
-
-                <a href="#" class="button">Explore Now <i class="fas fa-caret-right"></i></a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-</section>'; -->

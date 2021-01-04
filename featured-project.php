@@ -10,8 +10,8 @@ $pageName = 'Projects';
 include 'header2.php';
  
 
-$allProjects = $database->getReference('template/userData/featured/data/projects/')->orderByChild('title/text')->limitToFirst(2)->getValue();
-$allProjectsBackup = $database->getReference('template/userData/featured/data/projects/')->orderByChild('title/text')->limitToFirst(2)->getValue();
+$allProjects = $database->getReference('template/userData/featured/data/projects/')->getValue();
+$allProjectsBackup = $database->getReference('template/userData/featured/data/projects/')->getValue();
 
 $startLoopAt = 1;
 $totalNumberOfProjects = count($allProjects);
@@ -153,7 +153,7 @@ if (isset($_GET['status'])) {
                                 $type=$_POST['type'];
                                 $status=$_POST['status'];
                                 
-                                echo "<script> location.href='http://localhost/karda-template/featured-project?location=".$location."&type=".$type."&status=".$status."'; </script>";
+                                echo "<script> location.href='http://sterlingweb.in/projects/karda/beta/featured-project?location=".$location."&type=".$type."&status=".$status."'; </script>";
                               
                             } 
                             

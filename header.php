@@ -1,3 +1,11 @@
+
+<?php
+
+$headerData = $database->getReference('template/userData/header/data')->getValue();
+$bannerData = $database->getReference('template/userData/banner/data/arrayOne/data')->getValue();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +26,42 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <title>Karda Constructions</title>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyA3tT7v5CL8IVpg8MhNuHs5bDfK1EvTrhc" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDHhVYjE4DAtknooTdbYZkJbp0r6OfcZJ8" type="text/javascript"></script>
+    <script type ="text/javascript">
+        window.onload = fetch("http://api.marketstack.com/v1/eod?access_key=1be780d25fa658f3388de17c0431bb54&symbols=KARDA.XNSE")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            console.log(myJson?.data[0]?.adj_close, 'dcsc');
+            document.getElementById("stock-price-nse").innerHTML = myJson?.data[0]?.open;
+            if(myJson?.data[0]?.close < myJson?.data[0]?.open){
+                document.getElementById("stock-price-nse-icon").classList.toggle('fas')
+                document.getElementById("stock-price-nse-icon").classList.toggle('fa-caret-down')
+                document.getElementById("stock-price-nse-icon").classList.toggle('price-down')
+            } else {
+                document.getElementById("stock-price-nse-icon").classList.toggle('fas')
+                document.getElementById("stock-price-nse-icon").classList.toggle('fa-caret-up')
+                document.getElementById("stock-price-nse-icon").classList.toggle('price-up')
+            }
+        })
+        .catch(function (error) {
+            console.log("Error: " + error);
+        });
+
+        // window.onload = fetch("http://api.marketstack.com/v1/eod?access_key=1be780d25fa658f3388de17c0431bb54&symbols=KARDA.XBOM")
+        // .then(function (response) {
+        //     return response.json();
+        // })
+        // .then(function (myJson) {
+        //     console.log(myJson?.data[0]?.adj_close, 'dcsc');
+        //     document.getElementById("stock-price-bse").innerHTML = myJson?.data[0]?.adj_close;
+        // })
+        // .catch(function (error) {
+        //     console.log("Error: " + error);
+        // });
+    </script>
+    
 </head>
 
 <body>
@@ -115,20 +158,21 @@
                             <div class="topbar-right">
                                 <div class="media">
                                     <div class="media-body">
-                                        <?php echo '<a href="tel: '.$data['header']['data']['contactNumber']['text'].'" class="mobile">'.$data['header']['data']['contactNumber']['text'].'</a>'; ?>
-                                        <?php echo '<a href="mailto: '.$data['header']['data']['email']['text'].'" class="email">'.$data['header']['data']['email']['text'].'</a>'; ?>
+                                        <?php echo '<a href="tel: '.$headerData['contactNumber']['text'].'" class="mobile">'.$headerData['contactNumber']['text'].'</a>'; ?>
+                                        <?php echo '<a href="mailto: '.$headerData['email']['text'].'" class="email">'.$headerData['email']['text'].'</a>'; ?>
                                     </div>
                                     <div class="media-img ml-3">
                                         <i class="fas fa-mobile-alt"></i>
                                     </div>
                                 </div>
                                 <div class="stock-price">
+                                    <!-- <div class="stock">
+                                        <p>BSE - <span id="stock-price-bse">37,981.63</spam> <i class="fas fa-caret-up price-up"></i></p>
+                                    </div> -->
                                     <div class="stock">
-                                        <p>BSE - <span>37,981.63</span> <i class="fas fa-caret-up price-up"></i></p>
+                                        <p>NSE - <span id="stock-price-nse">11,227.55</span> <i id="stock-price-nse-icon" class=""></i></p>
                                     </div>
-                                    <div class="stock">
-                                        <p>NSE - <span>11,227.55</span> <i class="fas fa-caret-down price-down"></i></p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -223,14 +267,16 @@
         </div>
         <div class="banner-slider wow fadeInDown">
             <?php 
-                $count = count($data['banner']['data']['arrayOne']['data']);
-                if($data['banner']['data']['arrayOne']['data'][0] != 'true'){  
+                $count = count($bannerData);
+                if($bannerData[0] != 'true'){  
                     for ($i = 0; $i < $count; $i++) {
 echo '<div>
 
     <div class="img-box">';
-        if($data['banner']['data']['arrayOne']['data'][$i]['image']['name']){
-          echo '<img src="'.$imageBaseDirectory.$data['banner']['data']['arrayOne']['data'][$i]['image']['name'].'" class="w-100">';
+        if($bannerData[$i]['image']['name']){
+            $rand = rand();
+          echo '<img src="'.$imageBaseDirectory.$bannerData[$i]['image']['name'].'?rand='.$rand.' class="w-100">';
+          
         } else {
           echo '<img src="images/banner.jpg" class="w-100">';
         }
@@ -245,13 +291,13 @@ echo '<div>
 
                 <div class="col-12 col-md-8 offset-md-1">
 
-                <span class="launching">'.$data['banner']['data']['arrayOne']['data'][$i]['subTitle']['text'].'</span>
+                <span class="launching">'.$bannerData[$i]['subTitle']['text'].'</span>
 
-                    <h1><strong>'.$data['banner']['data']['arrayOne']['data'][$i]['title']['text'].'</strong></h1>
+                    <h1><strong>'.$bannerData[$i]['title']['text'].'</strong></h1>
 
-                    <h2>'.$data['banner']['data']['arrayOne']['data'][$i]['description']['text'].'</h2>
+                    <h2>'.$bannerData[$i]['description']['text'].'</h2>
 
-                    <a href="'.$data['banner']['data']['arrayOne']['data'][$i]['buttonOne']['link']['text'].'" class="button">View project <i class="fas fa-caret-right"></i></a>
+                    <a href="'.$bannerData[$i]['buttonOne']['link']['text'].'" class="button">View project <i class="fas fa-caret-right"></i></a>
 
                 </div>
 

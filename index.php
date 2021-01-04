@@ -2,8 +2,8 @@
 include ('./config-file.php');
 include ('./composer/firebase_db.php');
 //template data fetch from firebase
-$data = $database->getReference('template/userData')->getValue();
-
+// $data = $database->getReference('template/userData')->getValue();
+ 
 include 'header.php';
 include './components/tiles/tiles.php';
 include './components/featured/featured.php';

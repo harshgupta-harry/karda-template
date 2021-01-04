@@ -1,13 +1,13 @@
 <?php
-
+$data = $database->getReference('template/userData/stats/data/arrayOne/data')->getValue();
 echo '<section class="company-work">
 
 <div class="container">
 
     <ul class="row">';
 
-    $count = count($data['stats']['data']['arrayOne']['data']);
-                if($data['stats']['data']['arrayOne']['data'][0] != 'true'){  
+    $count = count($data);
+                if($data[0] != 'true'){  
                     for ($i = 0; $i < $count; $i++) {
 
         echo '<li class="col-12 col-md-4">
@@ -15,17 +15,18 @@ echo '<section class="company-work">
             <div class="work-block">
 
                 <div class="work-icon">';
-                    if($data['stats']['data']['arrayOne']['data'][$i]['image']['name']){
-                        echo '<img src="'.$imageBaseDirectory.$data['stats']['data']['arrayOne']['data'][$i]['image']['name'].'">';
+                    if($data[$i]['image']['name']){
+                        $rand = rand();
+                        echo '<img src="'.$imageBaseDirectory.$data[$i]['image']['name'].'?rand='.$rand.'">';
                     } else {
                         echo '<img src="images/projects.png">';
                     }
 
                 echo '</div>
 
-                <span class="work-title">'.$data['stats']['data']['arrayOne']['data'][$i]['title']['text'].'</span>
+                <span class="work-title">'.$data[$i]['title']['text'].'</span>
 
-                <h3 class="work-count"><span class="counter">'.$data['stats']['data']['arrayOne']['data'][$i]['count']['text'].'</span><span>+</span></h3>
+                <h3 class="work-count"><span class="counter">'.$data[$i]['count']['text'].'</span><span>+</span></h3>
 
             </div>
 
