@@ -1,14 +1,14 @@
 <?php
 
-$locationData = $database->getReference('template/userData/featured/data/projects/')->getValue();
+$locationData = $database->getReference('template/userData/featured/data/locations/')->getValue();
 
 // $locationData = $data['featured']['data']['projects'];
 $locationArray = [];
 $index = 0;
 foreach($locationData as $x => $value) {
-  if($value['location']['text'] && $value['location']['longitude'] && $value['location']['latitude']){
+  if($value['location'] && $value['longitude'] && $value['latitude']){
      
-    $locationArray[$index] = [$value['location']['text'], $value['location']['longitude'], $value['location']['latitude']];
+    $locationArray[$index] = [$value['location'], $value['longitude'], $value['latitude'], $value['slug']];
     $index++;
   }
   
@@ -42,7 +42,7 @@ echo "<section>
           'click',
           (function (marker, i) {
             return function () {
-              infowindow.setContent(locations[i][0]);
+              infowindow.setContent(locations[i][0] + '</br>' + '<a href=http://sterlingweb.in/projects/karda/beta/projects/' + locations[i][3] + ' target=_blank >View Project</a>');
               infowindow.open(map, marker);
             };
           })(marker, i)

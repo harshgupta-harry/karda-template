@@ -1,3 +1,4 @@
+
 <?php
 
 $headerData = $database->getReference('template/userData/header/data')->getValue();
@@ -26,6 +27,41 @@ $bannerData = $database->getReference('template/userData/banner/data/arrayOne/da
     <link rel="stylesheet" href="css/responsive.css">
     <title>Karda Constructions</title>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyDHhVYjE4DAtknooTdbYZkJbp0r6OfcZJ8" type="text/javascript"></script>
+    <script type ="text/javascript">
+        window.onload = fetch("http://api.marketstack.com/v1/eod?access_key=1be780d25fa658f3388de17c0431bb54&symbols=KARDA.XNSE")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (myJson) {
+            console.log(myJson?.data[0]?.adj_close, 'dcsc');
+            document.getElementById("stock-price-nse").innerHTML = myJson?.data[0]?.open;
+            if(myJson?.data[0]?.close < myJson?.data[0]?.open){
+                document.getElementById("stock-price-nse-icon").classList.toggle('fas')
+                document.getElementById("stock-price-nse-icon").classList.toggle('fa-caret-down')
+                document.getElementById("stock-price-nse-icon").classList.toggle('price-down')
+            } else {
+                document.getElementById("stock-price-nse-icon").classList.toggle('fas')
+                document.getElementById("stock-price-nse-icon").classList.toggle('fa-caret-up')
+                document.getElementById("stock-price-nse-icon").classList.toggle('price-up')
+            }
+        })
+        .catch(function (error) {
+            console.log("Error: " + error);
+        });
+
+        // window.onload = fetch("http://api.marketstack.com/v1/eod?access_key=1be780d25fa658f3388de17c0431bb54&symbols=KARDA.XBOM")
+        // .then(function (response) {
+        //     return response.json();
+        // })
+        // .then(function (myJson) {
+        //     console.log(myJson?.data[0]?.adj_close, 'dcsc');
+        //     document.getElementById("stock-price-bse").innerHTML = myJson?.data[0]?.adj_close;
+        // })
+        // .catch(function (error) {
+        //     console.log("Error: " + error);
+        // });
+    </script>
+    
 </head>
 
 <body>
@@ -130,12 +166,13 @@ $bannerData = $database->getReference('template/userData/banner/data/arrayOne/da
                                     </div>
                                 </div>
                                 <div class="stock-price">
+                                    <!-- <div class="stock">
+                                        <p>BSE - <span id="stock-price-bse">37,981.63</spam> <i class="fas fa-caret-up price-up"></i></p>
+                                    </div> -->
                                     <div class="stock">
-                                        <p>BSE - <span>37,981.63</span> <i class="fas fa-caret-up price-up"></i></p>
+                                        <p>NSE - <span id="stock-price-nse">11,227.55</span> <i id="stock-price-nse-icon" class=""></i></p>
                                     </div>
-                                    <div class="stock">
-                                        <p>NSE - <span>11,227.55</span> <i class="fas fa-caret-down price-down"></i></p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
