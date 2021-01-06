@@ -50,7 +50,7 @@ echo '<section class="featured-projects">
     
                         <span class="location"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
     
-                        <span class="area-reg">'.$value['reraDetails']['reraNumber'].'</span>
+                        <a href="'.$value['reraDetails']['reraLink'].'" target="_blank"><span class="area-reg">'.$value['reraDetails']['reraNumber'].'</span><a>
     
                         <a href="projects/'.$value['slug']['text'].'" class="button red">READ MORE <i class="fas fa-caret-right"></i></a>
     
