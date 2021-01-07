@@ -9,7 +9,7 @@
     
     $pageHeading = $projectDetails['title']['text'];
     
-    $imageBaseDirectory = $imageBaseDirectory.'Project/'.$projectDetails['slug']['text'];
+    $imageBaseDirectory1 = $imageBaseDirectory.'Project/'.$projectDetails['slug']['text'];
     $metaTags = $projectDetails['metaTags']['text'];
     $metaDescription = $projectDetails['metaDescription']['text'];
     include 'header3.php';
@@ -95,7 +95,7 @@
 
                         
                         <?php if($projectDetails['image']['name']){
-                                    echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['image']['name'].'">';
+                                    echo '<img src="'.$imageBaseDirectory1.'/'.$projectDetails['image']['name'].'">';
                                 } else {
                                     echo '<img src="images/harisiddhi.jpg" class="w-100"> ';
                                 } 
@@ -157,7 +157,7 @@
     
                             <div class="card-img">';
                                 if($projectDetails['amenities'][$i]['image']['name']){
-                                    echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['amenities'][$i]['image']['name'].'">';
+                                    echo '<img src="'.$imageBaseDirectory1.'/'.$projectDetails['amenities'][$i]['image']['name'].'">';
                                 } else {
                                     echo '<img src="images/amenity-icon-1.png">';
                                 }
@@ -211,12 +211,12 @@
                 $count = count($projectDetails['floorPlans']);
                 if($projectDetails['floorPlans'][0] != 'true'){  
                     for ($i = 0; $i < $count; $i++) {
-                        echo '<li class="col-12 col-md-3 mb-4 wow fadeInUp" data-wow-delay="0.3s" data-src="'.$projectDetails['floorPlans'][$i]['image']['name'].'">
+                        echo '<li class="col-12 col-md-3 mb-4 wow fadeInUp" data-wow-delay="0.3s" data-src="'.$imageBaseDirectory1.'/'.$projectDetails['floorPlans'][$i]['image']['name'].'">
 
                         <div class="plan-block">';
     
                         if($projectDetails['floorPlans'][$i]['image']['name']){
-                            echo '<img src="'.$imageBaseDirectory.'/'.$projectDetails['floorPlans'][$i]['image']['name'].'">';
+                            echo '<img src="'.$imageBaseDirectory1.'/'.$projectDetails['floorPlans'][$i]['image']['name'].'">';
                         } else {
                             echo '<img src="images/plan1.jpg">';
                         }
