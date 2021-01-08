@@ -8,6 +8,7 @@ jQuery(document).ready(function () {
 });
 
 $(".banner-slider").slick({
+  autoplay: true,
   dots: true,
   infinite: true,
   speed: 1500,
@@ -47,6 +48,7 @@ $(".banner-slider").slick({
 });
 
 $(".product-detail-banner").slick({
+  autoplay: true,
   dots: true,
   infinite: true,
   speed: 1500,
@@ -86,6 +88,7 @@ $(".product-detail-banner").slick({
 });
 
 $(".test-slider").slick({
+  autoplay: true,
   dots: false,
   infinite: true,
   speed: 1500,
@@ -125,6 +128,7 @@ $(".test-slider").slick({
 });
 
 $(".news-slider").slick({
+  autoplay: true,
   dots: false,
   infinite: true,
   speed: 1500,

@@ -1,229 +1,178 @@
-@media only screen and (min-width :1200px) and (max-width :1365px) {
-.banner .banner-content h1 { font-size: 60px; margin-bottom: 20px; }
-.banner .banner-content h2 { font-size: 34px; margin-bottom: 20px; }
-}
-
-@media only screen and (max-width :1199px) {
-.container { max-width: 100%; }
-.banner .banner-content { top: 50%; }
-.product-detail-banner .banner-content { top: auto; padding: 40px 0; }
-.banner-arrow { top: 50%; }
-.banner .banner-content h1 { font-size: 40px; margin-bottom: 20px; }
-.banner .banner-content h2 { font-size: 24px; margin-bottom: 20px; }
-.social-links { transform: translateX(-35%) translateY(0%) rotate(90deg); top: 50%; }
-.social-title { display: none; }
-
-.project-location { padding: 40px 0; }
-.project-location .section-title h2 { font-size: 34px; }
-.project-location .section-title span.count { margin-bottom: 20px; }
-
-.project-by-city { margin-bottom: 40px; }
-
-ul.partners-list { flex-flow: row wrap; }
-
-.about-us { padding: 40px 0; }
-
-.news-offers { padding: 40px 0; }
-.section-title { margin-bottom: 30px; }
-.section-title h2 { font-size: 34px; }
-.section-title span.count { font-size: 30px; }
-
-.testimonials { padding: 40px 0; }
-.testimonials .section-title { margin-bottom: 30px; }
-.testimonials .testimonials-desc p { font-size: 18px; line-height: 26px; }
-.test-arrow { margin-top: 40px; }
-
-.company-work ul li .work-block h3 { font-size: 40px; }
-
-.news-offers { padding: 40px 0; }
-
-.footer .foot-contact, .footer .foot-contact .email, .footer .foot-contact address { text-align: left; }
-.footer .foot-contact { margin-top: 30px; }
-.footer .foot-contact .email { margin-bottom: 8px; }
-.footer { padding: 100px 0 0; }
-.footer p { margin-bottom: 30px; }
-.copy { margin-top: 40px; }
-
-.banner.inner-banner .banner-content { position: static; transform: translateY(0); padding: 30px 0 0; }
-.inner-banner .banner-content h3 { color: #26282b; font-size: 30px; }
-.inner-banner .banner-content h3 span { font-size: 30px; }
-.inner-banner .banner-content .breadcrumb li, .inner-banner .banner-content .breadcrumb li a, .inner-banner .banner-content .breadcrumb li:before { color: #26282b; }
-
-.blog-section { padding: 40px 0; }
-
-.find-place { transform: translateY(0); padding: 40px 0; }
-.about-us .find-place { padding-bottom: 0;}
-
-
-.contact-info { margin-top: 40px; }
-.get-in-touch { margin-bottom: 100px; }
-
-.product-detail-banner .banner-content .button.enquiry { margin-bottom: 10px; }
-
-.career-form { padding: 30px 0 0;}
-}
-
-@media only screen and (max-width :991px) {
-body p { font-size: 14px; line-height: 1.4; }
-.banner .banner-content h1 { font-size: 40px; margin-bottom: 20px; }
-.banner .banner-content h2 { font-size: 24px; margin-bottom: 20px; }
-.social-links { transform: translateX(-35%) translateY(0%) rotate(90deg); }
-
-.project-location { padding: 40px 0; }
-.project-location .section-title h2 { font-size: 34px; }
-.project-location .section-title span.count { margin-bottom: 20px; }
-
-.project-by-city { margin-bottom: 40px; }
-
-ul.partners-list { flex-flow: row wrap; }
-
-.about-us, .media-sec { padding: 40px 0; }
-
-.news-offers { padding: 40px 0; }
-.section-title { margin-bottom: 30px; }
-.section-title h2 { font-size: 34px; }
-.section-title span.count { font-size: 30px; }
-
-.testimonials { padding: 40px 0; }
-.testimonials .section-title { margin-bottom: 30px; }
-.testimonials .testimonials-desc p { font-size: 18px; line-height: 26px; }
-.test-arrow { margin-top: 40px; }
-
-.company-work ul li .work-block h3 { font-size: 40px; }
-
-.news-offers { padding: 40px 0; }
-
-.footer .foot-contact, .footer .foot-contact .email, .footer .foot-contact address { text-align: left; }
-.footer .foot-contact { margin-top: 30px; }
-.footer .foot-contact .email { margin-bottom: 8px; }
-.footer { padding: 100px 0 0; }
-.footer p { margin-bottom: 30px; }
-.copy { margin-top: 40px; }
-
-
-.product-detail-banner .banner-content { position: static; display: block; padding: 30px 0; background: #27282c; }
-.product-detail-banner .banner-content .rera-reg { margin-bottom: 15px; }
-.product-detail-banner .banner-content .button.enquiry { margin-bottom: 10px; }
-.product-detail-banner .banner-content p { margin-bottom: 15px; }
-
-.modal-dialog { margin-top: 75px; }
-
-.product-details-tab .nav-pills .nav-link { padding: 5px 10px; font-size: 14px; display: block; text-align: center; }
-
-.section-title h3 { font-size: 24px; }
-.location-highlights, .floor-plans, .amenities { margin-bottom: 40px; }
-
-.media-sec ul li .plan-block .media-title { bottom: 0; }
-
-.awards ul li, .gov-contact ul li { display: block; }
-.awards ul li .media-img, .gov-contact ul li .media-img { width: 100%; margin-bottom: 30px; margin-right: 0; }
-.awards ul li .section-title h2, .gov-contact ul li .section-title h2 { margin-bottom: 5px; font-size: 24px; }
-
-.lg-toolbar { top: 65px; }
-}
-
-@media only screen and (max-width :767px) {
-.banner { margin-top: 65px; }
-.social-links, .banner-arrow { display: none; }
-.project-by-city { margin-bottom: 40px; margin-top: 40px; }
-.banner .banner-content { display: none; }
-
-.featured-project-img { height: 370px; }
-.featured-project-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.featured-project-info { padding: 20px 15px; bottom: -110px; }
-.featured-project .flat-type { font-size: 12px; }
-.button.red { padding: 0 15px; margin-right: 10px; }
-.button.grey { margin-right: 0; }
-
-.project-location  { padding: 40px 0; }
-.project-location .section-title span.count { margin-bottom: 20px; }
-.project-location .section-title h2 { font-size: 30px; }
-
-.about-us { padding: 40px 0; }
-.about-us .about-desc h1 { font-size: 18px; margin-bottom: 5px; }
-.about-us .img-box { margin-bottom: 30px; }
-
-.company-work ul li .work-block h3 { font-size: 40px; }
-.company-work ul li .work-block { padding: 30px 0; border-right: none; border-bottom: 1px solid rgb(38 40 43 / 0.2); }
-.company-work ul li:last-child .work-block { border: none; }
-
-.testimonials { padding: 40px 0; }
-.testimonials .section-title { margin-bottom: 40px; }
-.testimonials .testimonials-desc p { font-size: 16px; line-height: 24px; }
-.test-arrow { display: flex; align-items: center; margin-bottom: 40px; margin-top: 40px; }
-
-.news-offers { padding: 40px 0; }
-.section-title { margin-bottom: 30px; }
-.section-title h2 { font-size: 34px; }
-.section-title span.count { font-size: 30px; }
-
-.partners { padding-bottom: 40px; padding-top: 40px; }
-ul.partners-list { flex-wrap: wrap; padding: 0; margin-bottom: 0; }
-
-.footer { padding-top: 100px; }
-.footer .foot-contact { margin-top: 30px; }
-.footer .foot-contact, .footer .foot-contact .email, .footer .foot-contact address { text-align: left; }
-.footer .foot-contact .email { margin-bottom: 8px; }
-.footer p { margin-bottom: 30px; }
-
-.copy { margin-top: 40px; }
-.copy p, .copy a { margin-bottom: 0; }
-
-.blog-section .blog .blog-details { padding: 0; }
-.blog-section .blog .blog-details .share-comment { margin-right: 15px; }
-.blog-section .blog .blog-details .blog-content .blog-title { font-size: 24px; margin-bottom: 15px; }
-.blog-section .blog .blog-details .blog-content p { margin-bottom: 20px; }
-
-.sidebar { padding-left: 0; }
-.pagination { width: 100%; flex-wrap: wrap; }
-.pagination-block .page-number { width: 100%; padding: 10px 0; margin-top: 15px; text-align: left; }
-
-
-.inner-featured-project-img { height: 370px; }
-.inner-featured-project-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.inner-featured-project-info { padding: 20px 15px; bottom: -110px; }
-.inner-featured-project .flat-type { font-size: 12px; }
-
-.find-place { transform: translateY(0); padding: 40px 0; }
-
-.contact-info .info { padding: 20px; }
-.contact-info .info h2 { font-size: 24px; }
-
-.get-in-touch .form-wrap { padding: 20px; }
-
-
-.detail-breadcrumb h3 { font-size: 24px; }
-.detail-breadcrumb .breadcrumb { justify-content: flex-start; }
-.detail-breadcrumb .breadcrumb li, .detail-breadcrumb .breadcrumb li a, .detail-breadcrumb .breadcrumb li:before { font-size: 16px; }
-.product-details-tab .nav-pills .nav-item { margin-bottom: 5px; width: calc(50% - 10px); }
-.product-details-tab .nav-pills .nav-item:nth-of-type(2n) { margin-right: 0; }
-
-.product-details-tab { margin-bottom: 0; }
-
-.note .note-desc { padding: 20px; }
-
-.section-title h3 { font-size: 24px; }
-
-.location-highlights, .floor-plans, .amenities { margin-bottom: 40px; }
-
-.highlights li { flex-basis: 100%; padding: 5px 10px; }
-
-.contact-us .media { margin-bottom: 20px; }
-.contact-us .media .media-img { width: 30px; height: 30px; font-size: 16px; margin-right: 15px; }
-.contact-us .media .media-body a { font-size: 14px; line-height: 1.3; display: block; }
-
-.annual-report ul li h4 { font-size: 20px; margin-bottom: 30px; }
-.annual-report ul li hr { margin: 30px 0; }
-}
-
-
-@media only screen and (max-width :575px) {
-.featured-project-info { padding: 20px 15px; bottom: -110px; }
-.inner-featured-project-info { padding: 20px 15px; bottom: -110px; }
-.footer { padding-top: 60px; }
-}
-
-
-@media only screen and (max-width :480px) {
-.inner-featured-project-info { padding: 20px 15px; bottom: -110px; }
+@media only screen and (min-width :1200px) and (max-width :1365px) {
+
+.banner .banner-content h1 { font-size: 60px; margin-bottom: 20px; }
+.banner .banner-content h2 { font-size: 34px; margin-bottom: 20px; }
+}
+
+@media only screen and (max-width :1199px) {
+
+.container { max-width: 100%; }
+.banner .banner-content { top: 50%; }
+.product-detail-banner .banner-content { top: auto; padding: 40px 0; }
+.banner-arrow { top: 50%; }
+.banner .banner-content h1 { font-size: 40px; margin-bottom: 20px; }
+.banner .banner-content h2 { font-size: 24px; margin-bottom: 20px; }
+.social-links { transform: translateX(-35%) translateY(0%) rotate(90deg); top: 50%; }
+.social-title { display: none; }
+.project-location { padding: 40px 0; }
+.project-location .section-title h2 { font-size: 34px; }
+.project-location .section-title span.count { margin-bottom: 20px; }
+.project-by-city { margin-bottom: 40px; }
+ul.partners-list { flex-flow: row wrap; }
+.about-us { padding: 40px 0; }
+.news-offers { padding: 40px 0; }
+.section-title { margin-bottom: 30px; }
+.section-title h2 { font-size: 34px; }
+.section-title span.count { font-size: 30px; }
+.testimonials { padding: 40px 0; }
+.testimonials .section-title { margin-bottom: 30px; }
+.testimonials .testimonials-desc p { font-size: 18px; line-height: 26px; }
+.test-arrow { margin-top: 40px; }
+.company-work ul li .work-block h3 { font-size: 40px; }
+.news-offers { padding: 40px 0; }
+.footer .foot-contact, .footer .foot-contact .email, .footer .foot-contact address { text-align: left; }
+.footer .foot-contact { margin-top: 30px; }
+.footer .foot-contact .email { margin-bottom: 8px; }
+.footer { padding: 100px 0 0; }
+.footer p { margin-bottom: 30px; }
+.copy { margin-top: 40px; }
+.banner.inner-banner .banner-content { position: static; transform: translateY(0); padding: 30px 0 0; }
+.inner-banner .banner-content h3 { color: #26282b; font-size: 30px; }
+.inner-banner .banner-content h3 span { font-size: 30px; }
+.inner-banner .banner-content .breadcrumb li, .inner-banner .banner-content .breadcrumb li a, .inner-banner .banner-content .breadcrumb li:before { color: #26282b; }
+.blog-section { padding: 40px 0; }
+.find-place { transform: translateY(0); padding: 40px 0; }
+.about-us .find-place { padding-bottom: 0;}
+
+.contact-info { margin-top: 40px; }
+.get-in-touch { margin-bottom: 100px; }
+.product-detail-banner .banner-content .button.enquiry { margin-bottom: 10px; }
+.career-form { padding: 30px 0 0;}
+
+}
+
+@media only screen and (max-width :991px) {
+body p { font-size: 14px; line-height: 1.4; }
+.banner .banner-content h1 { font-size: 40px; margin-bottom: 20px; }
+.banner .banner-content h2 { font-size: 24px; margin-bottom: 20px; }
+.social-links { transform: translateX(-35%) translateY(0%) rotate(90deg); }
+.project-location { padding: 40px 0; }
+.project-location .section-title h2 { font-size: 34px; }
+.project-location .section-title span.count { margin-bottom: 20px; }
+.project-by-city { margin-bottom: 40px; }
+ul.partners-list { flex-flow: row wrap; }
+.about-us, .media-sec { padding: 40px 0; }
+.news-offers { padding: 40px 0; }
+.section-title { margin-bottom: 30px; }
+.section-title h2 { font-size: 34px; }
+.section-title span.count { font-size: 30px; }
+.testimonials { padding: 40px 0; }
+.testimonials .section-title { margin-bottom: 30px; }
+.testimonials .testimonials-desc p { font-size: 18px; line-height: 26px; }
+.test-arrow { margin-top: 40px; }
+.company-work ul li .work-block h3 { font-size: 40px; }
+.news-offers { padding: 40px 0; }
+.footer .foot-contact, .footer .foot-contact .email, .footer .foot-contact address { text-align: left; }
+.footer .foot-contact { margin-top: 30px; }
+.footer .foot-contact .email { margin-bottom: 8px; }
+.footer { padding: 100px 0 0; }
+.footer p { margin-bottom: 30px; }
+.copy { margin-top: 40px; }
+
+.product-detail-banner .banner-content { position: static; display: block; padding: 30px 0; background: #27282c; }
+.product-detail-banner .banner-content .rera-reg { margin-bottom: 15px; }
+.product-detail-banner .banner-content .button.enquiry { margin-bottom: 10px; }
+.product-detail-banner .banner-content p { margin-bottom: 15px; }
+.modal-dialog { margin-top: 75px; }
+.product-details-tab .nav-pills .nav-link { padding: 5px 10px; font-size: 14px; display: block; text-align: center; }
+.section-title h3 { font-size: 24px; }
+.location-highlights, .floor-plans, .amenities { margin-bottom: 40px; }
+.media-sec ul li .plan-block .media-title { bottom: 0; }
+.awards ul li, .gov-contact ul li { display: block; }
+.awards ul li .media-img, .gov-contact ul li .media-img { width: 100%; margin-bottom: 30px; margin-right: 0; }
+.awards ul li .section-title h2, .gov-contact ul li .section-title h2 { margin-bottom: 5px; font-size: 24px; }
+.lg-toolbar { top: 65px; }
+}
+
+@media only screen and (max-width :767px) {
+
+.banner { margin-top: 65px; }
+.social-links, .banner-arrow { display: none; }
+.project-by-city { margin-bottom: 40px; margin-top: 40px; }
+.banner .banner-content { display: none; }
+.featured-project-img { height: 370px; }
+.featured-project-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.featured-project-info { padding: 20px 15px; bottom: -110px; }
+.featured-project .flat-type { font-size: 12px; }
+.button.red { padding: 0 15px; margin-right: 10px; }
+.button.grey { margin-right: 0; }
+.project-location  { padding: 40px 0; }
+.project-location .section-title span.count { margin-bottom: 20px; }
+.project-location .section-title h2 { font-size: 30px; }
+.about-us { padding: 40px 0; }
+.about-us .about-desc h1 { font-size: 18px; margin-bottom: 5px; }
+.about-us .img-box { margin-bottom: 30px; }
+.company-work ul li .work-block h3 { font-size: 40px; }
+.company-work ul li .work-block { padding: 30px 0; border-right: none; border-bottom: 1px solid rgb(38 40 43 / 0.2); }
+.company-work ul li:last-child .work-block { border: none; }
+.testimonials { padding: 40px 0; }
+.testimonials .section-title { margin-bottom: 40px; }
+.testimonials .testimonials-desc p { font-size: 16px; line-height: 24px; }
+.test-arrow { display: flex; align-items: center; margin-bottom: 40px; margin-top: 40px; }
+.news-offers { padding: 40px 0; }
+.section-title { margin-bottom: 30px; }
+.section-title h2 { font-size: 34px; }
+.section-title span.count { font-size: 30px; }
+.partners { padding-bottom: 40px; padding-top: 40px; }
+ul.partners-list { flex-wrap: wrap; padding: 0; margin-bottom: 0; }
+.footer { padding-top: 100px; }
+.footer .foot-contact { margin-top: 30px; }
+.footer .foot-contact, .footer .foot-contact .email, .footer .foot-contact address { text-align: left; }
+.footer .foot-contact .email { margin-bottom: 8px; }
+.footer p { margin-bottom: 30px; }
+.copy { margin-top: 40px; }
+.copy p, .copy a { margin-bottom: 0; }
+.blog-section .blog .blog-details { padding: 0; }
+.blog-section .blog .blog-details .share-comment { margin-right: 15px; }
+.blog-section .blog .blog-details .blog-content .blog-title { font-size: 24px; margin-bottom: 15px; }
+.blog-section .blog .blog-details .blog-content p { margin-bottom: 20px; }
+.sidebar { padding-left: 0; }
+.pagination { width: 100%; flex-wrap: wrap; }
+.pagination-block .page-number { width: 100%; padding: 10px 0; margin-top: 15px; text-align: left; }
+
+.inner-featured-project-img { height: 370px; }
+.inner-featured-project-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.inner-featured-project-info { padding: 20px 15px; bottom: -110px; }
+.inner-featured-project .flat-type { font-size: 12px; }
+.find-place { transform: translateY(0); padding: 40px 0; }
+.contact-info .info { padding: 20px; }
+.contact-info .info h2 { font-size: 24px; }
+.get-in-touch .form-wrap { padding: 20px; }
+
+.detail-breadcrumb h3 { font-size: 24px; }
+.detail-breadcrumb .breadcrumb { justify-content: flex-start; }
+.detail-breadcrumb .breadcrumb li, .detail-breadcrumb .breadcrumb li a, .detail-breadcrumb .breadcrumb li:before { font-size: 16px; }
+.product-details-tab .nav-pills .nav-item { margin-bottom: 5px; width: calc(50% - 10px); }
+.product-details-tab .nav-pills .nav-item:nth-of-type(2n) { margin-right: 0; }
+.product-details-tab { margin-bottom: 0; }
+.product-details-tab.stick { padding-top: 66px; }
+.note .note-desc { padding: 20px; }
+.section-title h3 { font-size: 24px; }
+.location-highlights, .floor-plans, .amenities { margin-bottom: 40px; }
+.highlights li { flex-basis: 100%; padding: 5px 10px; }
+.contact-us .media { margin-bottom: 20px; }
+.contact-us .media .media-img { width: 30px; height: 30px; font-size: 16px; margin-right: 15px; }
+.contact-us .media .media-body a { font-size: 14px; line-height: 1.3; display: block; }
+.annual-report ul li h4 { font-size: 20px; margin-bottom: 30px; }
+.annual-report ul li hr { margin: 30px 0; }
+}
+
+@media only screen and (max-width :575px) {
+.featured-project-info { padding: 20px 15px; bottom: -110px; }
+.inner-featured-project-info { padding: 20px 15px; bottom: -110px; }
+.footer { padding-top: 60px; }
+}
+
+@media only screen and (max-width :480px) {
+.inner-featured-project-info { padding: 20px 15px; bottom: -110px; }
 }

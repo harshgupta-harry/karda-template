@@ -1,4 +1,4 @@
-<?php 
+<?php
 $pageHeading = 'Projects';
 include ('./composer/firebase_db.php');
 
@@ -8,7 +8,7 @@ $addBaseTag = false;
 include ('./config-file.php');
 $pageName = 'Projects';
 include 'header2.php';
- 
+
 
 $allProjects = $database->getReference('template/userData/featured/data/projects/')->getValue();
 $allProjectsBackup = $database->getReference('template/userData/featured/data/projects/')->getValue();
@@ -64,7 +64,7 @@ if (isset($_GET['status'])) {
     $status = 'Select Status';
 }
 
-    foreach($allProjectsBackup as $slug => $value) { 
+    foreach($allProjectsBackup as $slug => $value) {
         if($location != 'Select Location' && $value['location']['text'] != $location){
             unset($allProjects[$slug]);
         }
@@ -105,7 +105,7 @@ if (isset($_GET['status'])) {
                                 foreach($statusCategory as $name => $value) {
                                     echo '<option value="'.$value.'">'.$name.'</option>';
                                 }
-                                    
+
 
                                 echo '</select>
 
@@ -147,16 +147,16 @@ if (isset($_GET['status'])) {
                             </div>
 
                         </div>';
-                        
+
                             if(isset($_POST['submit'])){
                                 $location=$_POST['location'];
                                 $type=$_POST['type'];
                                 $status=$_POST['status'];
-                                
+
                                 echo "<script> location.href='http://sterlingweb.in/projects/karda/beta/featured-project?location=".$location."&type=".$type."&status=".$status."'; </script>";
-                              
-                            } 
-                            
+
+                            }
+
                     echo '</form>'; ?>
 
                 </div>
@@ -176,19 +176,19 @@ if (isset($_GET['status'])) {
             <div class="row">
 
                 <?php
-                
+
                 $index = 1;
-                foreach($allProjects as $key => $value) { 
+                foreach($allProjects as $key => $value) {
                     if($index <= ($currentPage*$numberOfItemsOnAPage)-$numberOfItemsOnAPage){
-                        
+
                         $index++;
                         continue;
                     }
                     if($index > $currentPage*$numberOfItemsOnAPage){
-                        
+
                         break;
                     }
-                    
+
                 echo '<div class="col-12 col-sm-6 col-lg-4 wow fadeInDown" data-wow-delay="0.3s">
 
                     <div class="inner-featured-project">
@@ -200,17 +200,17 @@ if (isset($_GET['status'])) {
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }
-                            
+
 
                         echo '</div>
 
                         <div class="inner-featured-project-info">
 
-                            <span class="flat-type">'.$value['type']['text'].'</span>
+                            <span class="flat-type"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
 
                             <h3 class="property-name">'.$value['title']['text'].'</h3>
 
-                            <span class="location"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
+                            <span class="location">'.$value['type']['text'].'</span>
 
                             <span class="area-reg">RERA Registration No. : '.$value['reraDetails']['reraNumber'].'</span>
 
@@ -226,7 +226,7 @@ if (isset($_GET['status'])) {
                 $index++;
                 } ?>
 
-                
+
 
             </div>
 
@@ -248,9 +248,9 @@ if (isset($_GET['status'])) {
 
             <ul class="pagination">
 
-                
 
-                <?php 
+
+                <?php
                 $previousPage;
                 if($currentPage > 1){
                     $previousPage = $currentPage - 1;
@@ -271,9 +271,9 @@ if (isset($_GET['status'])) {
                 } else {
                     $nextPage = $currentPage;
                 }
-                 
+
                 for($i=1; $i<=ceil($totalNumberOfProjects/$numberOfItemsOnAPage); $i++){
-                    
+
                     if($i == $currentPage){
                         echo '<li class="page-item"><a class="page-link active" href="javaScript:void(0)">'.$i.'</a></li>';
                     } else {
@@ -282,10 +282,10 @@ if (isset($_GET['status'])) {
                 }
                  ?>
 
-                
+
                 <?php
 if($currentPage < $totalPages){
-    
+
 echo '<li class="page-item">
 
                      <a class="page-link" href="./featured-project.php?page='.$nextPage.'">

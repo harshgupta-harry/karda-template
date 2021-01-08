@@ -7,10 +7,10 @@ echo '<section class="company-work">
     <ul class="row">';
 
     $count = count($data);
-                if($data[0] != 'true'){  
+                if($data[0] != 'true'){
                     for ($i = 0; $i < $count; $i++) {
 
-        echo '<li class="col-12 col-md-4">
+        echo '<li class="col-12 col-md-6 col-lg-3">
 
             <div class="work-block">
 
@@ -32,7 +32,7 @@ echo '<section class="company-work">
 
         </li>';}}
 
-        
+
 
     echo '</ul>
 
