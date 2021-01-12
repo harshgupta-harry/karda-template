@@ -1,4 +1,4 @@
-<?php 
+<?php
 $pageHeading = 'Blogs';
 include ('./composer/firebase_db.php');
 
@@ -54,24 +54,24 @@ if (isset($_GET['category'])) {
 
 
                     <?php
-                
+
                 $index = 1;
-                
-                foreach($allBlogs as $key => $value) { 
+
+                foreach($allBlogs as $key => $value) {
                     if($index <= ($currentPage*$numberOfItemsOnAPage)-$numberOfItemsOnAPage){
-                        
+
                         $index++;
                         continue;
                     }
                     if($index > $currentPage*$numberOfItemsOnAPage){
-                        
+
                         break;
                     }
                     echo '<div class="blog wow fadeInLeft" data-wow-delay="0.3s">
 
                         <div class="blog-img">';
 
-                            
+
                             if($value['image']['name']){
                                 echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                             } else {
@@ -98,7 +98,7 @@ if (isset($_GET['category'])) {
 
                     </div>';
                     $index++;
-                
+
             }
                 ?>
             </div>
@@ -109,7 +109,7 @@ if (isset($_GET['category'])) {
                             <h4 class="recent-blog-title">Recent Posts</h4>
 
                         <?php $recentBlogsIndex = 1;
-                            foreach($allBlogs as $key => $value) { 
+                            foreach($allBlogs as $key => $value) {
                                 if($recentBlogsIndex > 4){
                                 break;
                                 }
@@ -118,7 +118,7 @@ if (isset($_GET['category'])) {
 
                                 <div class="media-img">';
 
-                                    
+
                                     if($value['image']['name']){
                                         echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
                                     } else {
@@ -141,7 +141,7 @@ if (isset($_GET['category'])) {
 
                             ?>
 
-                            
+
 
                         </div>
 
@@ -156,7 +156,7 @@ if (isset($_GET['category'])) {
                                         echo '<li><a href="./blog?category='.$key.'">'.$value.'</a></li>';
                                     }
                                 ?>
-                                
+
 
                             </ul>
 
@@ -189,9 +189,9 @@ if (isset($_GET['category'])) {
 
             <ul class="pagination">
 
-                
 
-                <?php 
+
+                <?php
                 $previousPage;
                 if($currentPage > 1){
                     $previousPage = $currentPage - 1;
@@ -211,9 +211,9 @@ if (isset($_GET['category'])) {
                 } else {
                     $nextPage = $currentPage;
                 }
-                 
+
                 for($i=1; $i<=ceil($totalNumberOfBlogs/$numberOfItemsOnAPage); $i++){
-                    
+
                     if($i == $currentPage){
                         echo '<li class="page-item"><a class="page-link active" href="javaScript:void(0)">'.$i.'</a></li>';
                     } else {
@@ -222,10 +222,10 @@ if (isset($_GET['category'])) {
                 }
                  ?>
 
-                
+
 <?php
 if($currentPage < $totalPages){
-    
+
 echo '<li class="page-item">
 
                      <a class="page-link" href="./blog.php?page='.$nextPage.'">
@@ -240,7 +240,7 @@ echo '<li class="page-item">
 
             </ul>
 
-            
+
             <div class="page-number">
 
                 <?php echo 'page '.$currentPage.' of '.$totalPages; ?>
