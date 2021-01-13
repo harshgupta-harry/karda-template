@@ -197,11 +197,15 @@
 
                                         <option value="" selected>Requirement</option>
 
-                                        <option value="1">One</option>
+                                        <option value="1 BKH">1 BKH</option>
 
-                                        <option value="2">Two</option>
+                                        <option value="2 BKH">2 BKH</option>
 
-                                        <option value="3">Three</option>
+                                        <option value="3 BKH">3 BKH</option>
+
+                                        <option value="4 BKH">4 BKH</option>
+
+                                        <option value="Premium bungalow">Premium bungalow</option>
 
                                     </select>
 
@@ -227,6 +231,7 @@
 
                             <div class="col-12 text-center">
 								<input type="hidden" id="projectSlug" value="" name="projectSlug" />
+                                <input type="hidden" id="projectName" value="" name="projectName" />
                                 <button type="submit" class="button" >Submit</button>
 
                             </div>
@@ -331,11 +336,15 @@
 
                                         <option value="" selected>Requirement</option>
 
-                                        <option value="1">One</option>
+                                        <option value="1 BKH">1 BKH</option>
 
-                                        <option value="2">Two</option>
+                                        <option value="2 BKH">2 BKH</option>
 
-                                        <option value="3">Three</option>
+                                        <option value="3 BKH">3 BKH</option>
+
+                                        <option value="4 BKH">4 BKH</option>
+
+                                        <option value="Premium bungalow">Premium bungalow</option>
 
                                     </select>
 
@@ -361,6 +370,7 @@
 
                             <div class="col-12 text-center">
 								<input type="hidden" id="projectSlug" value="" name="projectSlug" />
+                                <input type="hidden" id="projectName" value="" name="projectName" />
                                 <button type="submit" class="button">Submit</button>
 
                             </div>

@@ -4,7 +4,7 @@ include ('./composer/firebase_db.php');
 
 $headerDetails = $database->getReference('template/userData/header/data')->getValue();
 
-$addBaseTag = false;
+// $addBaseTag = false;
 include ('./config-file.php');
 $pageName = 'Projects';
 include 'header2.php';

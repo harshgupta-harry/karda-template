@@ -34,7 +34,7 @@ if($action == 'enquiryForm'){
 			/*
 			 * Send email to admin
 			 */
-			$to     = 'kavita.kardar@gmail.com';
+			$to     = 'harshgupta.harry@gmail.com';
 			$subject= 'Enquiry Submitted';
 			
 			$htmlContent = '
@@ -65,11 +65,11 @@ if($action == 'enquiryForm'){
 			$headers .= 'From: Kavita<kavita.kardar@gmail.com>' . "\r\n";
 			
 			// Send email
-		   /*  if(mail($to,$subject,$htmlContent,$headers)){
+		     if(mail($to,$subject,$htmlContent,$headers)){
 				$status['result'] = 'success';
 			}else{
 				$status['result'] = 'error';
-			}*/
+			}
 			$status['result'] = 'success';
 		}else{
 			$status['result'] = 'error';
@@ -114,7 +114,7 @@ if($action == 'ebrouchureForm'){
 			/*
 			 * Send email to admin
 			 */
-			$to     = 'kavita.kardar@gmail.com';
+			$to     = 'harshgupta.harry@gmail.com';
 			$subject= 'Enquiry Submitted';
 			
 			$htmlContent = '
@@ -145,11 +145,11 @@ if($action == 'ebrouchureForm'){
 			$headers .= 'From: Kavita<kavita.kardar@gmail.com>' . "\r\n";
 			
 			// Send email
-		   /*  if(mail($to,$subject,$htmlContent,$headers)){
+		    if(mail($to,$subject,$htmlContent,$headers)){
 				$response['result'] = 'success';
 			}else{
 				$response['result'] = 'error';
-			}*/
+			}
 			$projectDetails = $database->getReference('template/userData/featured/data/projects/'.$projectSlug)->getValue();
 			// Declare a variable and initialize 
 			// it with URL 

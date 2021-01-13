@@ -45,7 +45,7 @@ $fileName = basename($_SERVER['PHP_SELF']);
                 <div class="topbar wow fadeInRight">
                     <div class="row align-items-center">
                         <div class="col-12 col-md-2">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="index.php">
                                 <img src="images/logo.png" class="w-100">
                             </a>
                         </div>
@@ -75,9 +75,9 @@ $fileName = basename($_SERVER['PHP_SELF']);
                 <nav class="navbar navbar-expand-lg wow fadeInLeft">
                     <div class="collapse navbar-collapse">
                         <ul class="navbar-nav ml-auto">
-                            <li><a href="index.php">Home1</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li>
-                                <a href="featured-project.php">Projects1</a>
+                                <a href="featured-project.php">Projects</a>
                                 <ul>
                                 <li><a href="featured-project.php?status=Ongoing">Ongoing Projects</a></li>
                                 <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
@@ -85,17 +85,17 @@ $fileName = basename($_SERVER['PHP_SELF']);
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0)">Corporate1</a>
+                                <a href="javascript:void(0)">Corporate</a>
                                 <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="directors.html">Directors</a></li>
-                                    <li><a href="key-person.html">Key Person</a></li>
-                                    <li><a href="vision-mission.html">Vision &amp; Mission</a></li>
-                                    <li><a href="media.html">Media</a></li>
-                                    <li><a href="awards.html">Awards</a></li>
-                                    <li><a href="event.html">Event</a></li>
-                                    <li><a href="testimonials.html">Testimonials</a></li>
-                                    <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                                    <li><a href="about.php">About Us</a></li>
+                                    <li><a href="directors.php">Directors</a></li>
+                                    <li><a href="key-person.php">Key Person</a></li>
+                                    <li><a href="vision-mission.php">Vision &amp; Mission</a></li>
+                                    <li><a href="media.php">Media</a></li>
+                                    <li><a href="awards.php">Awards</a></li>
+                                    <li><a href="event.php">Event</a></li>
+                                    <li><a href="testimonials.php">Testimonials</a></li>
+                                    <li><a href="terms-and-conditions.php">Terms and Conditions</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -104,16 +104,16 @@ $fileName = basename($_SERVER['PHP_SELF']);
                                     <li>
                                         <a href="javascript:void(0)">Financials &amp; Filings</a>
                                         <ul>
-                                            <li><a href="annual-report.html">Anual Report</a></li>
-                                            <li><a href="quarterly-results.html">Quarterly Results &amp; Reports</a></li>
+                                            <li><a href="annual-report.php">Anual Report</a></li>
+                                            <li><a href="quarterly-results.php">Quarterly Results &amp; Reports</a></li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="javascript:void(0)">Shareholder's Services</a>
                                         <ul>
                                             <li><a href="http://kardaconstruction.com/uploads/investors-master/1506408537Final set of MOA &amp; AOA-KCL.pdf" target="_blank">Memoramdum of Association &amp; Articles of Associations</a></li>
-                                            <li><a href="shareholding-pattern.html">Shareholding Pattern</a></li>
-                                            <li><a href="investor-contact.html">Investor Contact</a></li>
+                                            <li><a href="shareholding-pattern.php">Shareholding Pattern</a></li>
+                                            <li><a href="investor-contact.php">Investor Contact</a></li>
                                         </ul>
                                     </li>
                                     <li>
@@ -132,20 +132,20 @@ $fileName = basename($_SERVER['PHP_SELF']);
                                                     <li><a href="http://kardaconstruction.com/uploads/investors-master/1510224444materiality Policy.pdf" target="_blank">Materiality Policy</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="governance-report.html">Corporate Governance Report</a></li>
-                                            <li><a href="familiarization-programme-of-independent-directors.html">Familiarization programme of independent directors</a></li>
-                                            <li><a href="notice.html"> Notice</a></li>
+                                            <li><a href="governance-report.php">Corporate Governance Report</a></li>
+                                            <li><a href="familiarization-programme-of-independent-directors.php">Familiarization programme of independent directors</a></li>
+                                            <li><a href="notice.php"> Notice</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="ipo.html">IPO</a></li>
-                                    <li><a href="announcements.html">Announcements</a></li>
-                                    <li><a href="postal-ballot.html">Postal Ballot</a></li>
+                                    <li><a href="ipo.php">IPO</a></li>
+                                    <li><a href="announcements.php">Announcements</a></li>
+                                    <li><a href="postal-ballot.php">Postal Ballot</a></li>
                                 </ul>
                             </li>
-                            <li><a href="infra-govt-contracts.html">Infra. &amp; Govt. Contracts</a></li>
+                            <li><a href="infra-govt-contracts.php">Infra. &amp; Govt. Contracts</a></li>
                             <li><a href="blog.php">Blog</a></li>
-                            <li><a href="career.html">Careers</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="career.php">Careers</a></li>
+                            <li><a href="contact.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>

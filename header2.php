@@ -1,3 +1,11 @@
+<?php
+include ('./config-file.php');
+include ('./composer/firebase_db.php');
+
+$headerData = $database->getReference('template/userData/header/data')->getValue();
+$bannerData = $database->getReference('template/userData/banner/data/arrayOne/data')->getValue();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +22,7 @@
     ?>
     <!-- Bootstrap CSS -->
     <?php
-if($addBaseTag){
+if(isset($addBaseTag)){
     echo "<base href='../' />";
 }
 ?>
@@ -34,7 +42,7 @@ if($addBaseTag){
 
 <body>
     <!--- Responsive Menu:Begin -->
-    <a href="index.html" class="mobile-logo d-lg-none"><img src="images/logo.png"></a>
+    <a href="index.php" class="mobile-logo d-lg-none"><img src="images/logo.png"></a>
     <div class="responsive-menu">
         <nav>
             <ul>
@@ -50,15 +58,15 @@ if($addBaseTag){
                 <li>
                     <a href="javascript:void(0)">Corporate</a>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="directors.html">Directors</a></li>
-                        <li><a href="key-person.html">Key Person</a></li>
-                        <li><a href="vision-mission.html">Vision &amp; Mission</a></li>
-                        <li><a href="media.html">Media</a></li>
-                        <li><a href="awards.html">Awards</a></li>
-                        <li><a href="event.html">Event</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="directors.php">Directors</a></li>
+                        <li><a href="key-person.php">Key Person</a></li>
+                        <li><a href="vision-mission.php">Vision &amp; Mission</a></li>
+                        <li><a href="media.php">Media</a></li>
+                        <li><a href="awards.php">Awards</a></li>
+                        <li><a href="event.php">Event</a></li>
+                        <li><a href="testimonials.php">Testimonials</a></li>
+                        <li><a href="terms-and-conditions.php">Terms and Conditions</a></li>
                     </ul>
                 </li>
                 <li>
@@ -67,16 +75,16 @@ if($addBaseTag){
                         <li>
                             <a href="javascript:void(0)">Financials &amp; Filings</a>
                             <ul>
-                                <li><a href="annual-report.html">Anual Report</a></li>
-                                <li><a href="quarterly-results.html">Quarterly Results &amp; Reports</a></li>
+                                <li><a href="annual-report.php">Anual Report</a></li>
+                                <li><a href="quarterly-results.php">Quarterly Results &amp; Reports</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="javascript:void(0)">Shareholder's Services</a>
                             <ul>
                                 <li><a href="http://kardaconstruction.com/uploads/investors-master/1506408537Final set of MOA &amp; AOA-KCL.pdf" target="_blank">Memoramdum of Association &amp; Articles of Associations</a></li>
-                                <li><a href="shareholding-pattern.html">Shareholding Pattern</a></li>
-                                <li><a href="investor-contact.html">Investor Contact</a></li>
+                                <li><a href="shareholding-pattern.php">Shareholding Pattern</a></li>
+                                <li><a href="investor-contact.php">Investor Contact</a></li>
                             </ul>
                         </li>
                         <li>
@@ -95,20 +103,20 @@ if($addBaseTag){
                                         <li><a href="http://kardaconstruction.com/uploads/investors-master/1510224444materiality Policy.pdf" target="_blank">Materiality Policy</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="governance-report.html">Corporate Governance Report</a></li>
-                                <li><a href="familiarization-programme-of-independent-directors.html">Familiarization programme of independent directors</a></li>
-                                <li><a href="notice.html"> Notice</a></li>
+                                <li><a href="governance-report.php">Corporate Governance Report</a></li>
+                                <li><a href="familiarization-programme-of-independent-directors.php">Familiarization programme of independent directors</a></li>
+                                <li><a href="notice.php"> Notice</a></li>
                             </ul>
                         </li>
-                        <li><a href="ipo.html">IPO</a></li>
-                        <li><a href="announcements.html">Announcements</a></li>
-                        <li><a href="postal-ballot.html">Postal Ballot</a></li>
+                        <li><a href="ipo.php">IPO</a></li>
+                        <li><a href="announcements.php">Announcements</a></li>
+                        <li><a href="postal-ballot.php">Postal Ballot</a></li>
                     </ul>
                 </li>
-                <li><a href="infra-govt-contracts.html">Infra. &amp; Govt. Contracts</a></li>
+                <li><a href="infra-govt-contracts.php">Infra. &amp; Govt. Contracts</a></li>
                 <li><a href="blog.php">Blog</a></li>
-                <li><a href="career.html">Careers</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="career.php">Careers</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
             </ul>
         </nav>
     </div>
@@ -126,11 +134,11 @@ if($addBaseTag){
                 <div class="row align-items-center">
                     <div class="col-12 col-md-6 wow fadeInLeft" data-wow-delay="0.3s">
                         <!-- <h3><span>Contact</span> Us</h3> -->
-                        <h3><?php echo $pageHeading; ?></h3>
+                        <h3><?php if(isset($pageHeading)){ echo $pageHeading;} ?></h3>
                     </div>
                     <div class="col-12 col-md-6 wow fadeInRight" data-wow-delay="0.3s">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                             <?php 
                                 if(isset($pageName)){
                                     echo '<li class="breadcrumb-item active" aria-current="page">'.$pageName.'</li>';
