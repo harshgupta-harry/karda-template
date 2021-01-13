@@ -1,4 +1,5 @@
 <?php 
+$rand = rand();
 include ('./composer/firebase_db.php');
 
 $headerDetails = $database->getReference('template/userData/header/data')->getValue();
@@ -32,7 +33,7 @@ foreach($allBlogs as $name => $value) {
                             
                             <?php
                             if($blogDetails['image']['name']){
-                                echo '<img src="'.$imageBaseDirectory.'Blog/'.$blogDetails['slug']['text'].'/'.$blogDetails['image']['name'].'" class="w-100">';
+                                echo '<img src="'.$imageBaseDirectory.'Blog/'.$blogDetails['imageFolderName'].'/'.$blogDetails['image']['name'].'?rand='.$rand.'" class="w-100">';
                             } else {
                                 echo '<img src="images/blog1.jpg" class="w-100">';
                             }
@@ -83,7 +84,7 @@ foreach($allBlogs as $name => $value) {
 
                                     
                                     if($value['image']['name']){
-                                        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                                        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['imageFolderName'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                                     } else {
                                         echo '<img src="images/post1.jpg" class="w-100">';
                                     }

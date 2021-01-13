@@ -35,7 +35,7 @@ echo '<section class="featured-projects">
                     <div class="featured-project-img">';
                         if($value['image']['name']){
                             $rand = rand();
-                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['slug']['text'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
+                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['imageFolderName'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }

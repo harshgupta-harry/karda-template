@@ -16,7 +16,7 @@ $allRecentBlogs = $database->getReference('template/userData/blogs/data/blogs/')
 
     <div class="media-img">';
     if($value['image']['name']){
-        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['imageFolderName'].'/'.$value['image']['name'].'" class="w-100">';
     } else {
         echo '<img src="images/post1.jpg" class="w-100" />';
     }

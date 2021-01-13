@@ -1,4 +1,5 @@
 <?php
+$rand = rand();
 $pageHeading = 'Blogs';
 include ('./composer/firebase_db.php');
 
@@ -73,7 +74,7 @@ if (isset($_GET['category'])) {
 
 
                             if($value['image']['name']){
-                                echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                                echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['imageFolderName'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                             } else {
                                 echo '<img src="images/blog1.jpg" class="w-100">';
                             }
@@ -120,7 +121,7 @@ if (isset($_GET['category'])) {
 
 
                                     if($value['image']['name']){
-                                        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                                        echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['imageFolderName'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                                     } else {
                                         echo '<img src="images/post1.jpg" class="w-100">';
                                     }

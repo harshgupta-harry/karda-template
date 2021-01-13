@@ -37,7 +37,7 @@ echo '<section class="news-offers">
                 
                 if($value['image']['name']){
                     $rand = rand();
-                    echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['slug']['text'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
+                    echo '<img src="'.$imageBaseDirectory.'Blog/'.$value['imageFolderName'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                 } else {
                     echo '<img src="images/niketan.jpg" class="w-100">';
                 }

@@ -11,6 +11,7 @@
             if(isset($metaTags)){
                 echo '<meta name="keywords" content="'.$metaTags.'">';
             }
+            $rand = rand();
     ?>
     <!-- Bootstrap CSS -->
     <base href='../' />
@@ -133,7 +134,7 @@
 
                 <div class="img-box">';
                     if($projectDetails['banner'][$i]['image']['name']){
-                        echo '<img src="'.$imageBaseDirectory1.'/'.$projectDetails['banner'][$i]['image']['name'].'" class="w-100">';
+                        echo '<img src="'.$imageBaseDirectory1.'/'.$projectDetails['banner'][$i]['image']['name'].'?rand='.$rand.'" class="w-100">';
                     } else {
                         echo '<img src="images/banner.jpg" class="w-100">';
                     }

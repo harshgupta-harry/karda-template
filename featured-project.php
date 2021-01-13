@@ -1,4 +1,5 @@
 <?php
+$rand = rand();
 $pageHeading = 'Projects';
 include ('./composer/firebase_db.php');
 
@@ -99,12 +100,15 @@ if (isset($_GET['status'])) {
 
                                 <select class="custom-select" name="status">
                                 <option selected value="'.$status.'">'.$status.'</option>
-                                <option value="Select Status">All</option>';
+                                <option value="Select Status">All</option>
+                                <option value="Under construction">Under construction</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Ongoing">Ongoing</option>';
 
 
-                                foreach($statusCategory as $name => $value) {
-                                    echo '<option value="'.$value.'">'.$name.'</option>';
-                                }
+                                // foreach($statusCategory as $name => $value) {
+                                //     echo '<option value="'.$value.'">'.$name.'</option>';
+                                // }
 
 
                                 echo '</select>
@@ -116,10 +120,16 @@ if (isset($_GET['status'])) {
                                 <select class="custom-select" name="type">
 
                                     <option selected value="'.$type.'">'.$type.'</option>
-                                    <option value="Select Flat Type">All</option>';
-                                    foreach($typeCategory as $name => $value) {
-                                        echo '<option value="'.$value.'">'.$name.'</option>';
-                                    }
+                                    <option value="Select Flat Type">All</option>
+                                    <option value="1 BHK">1 BHK</option>
+                                    <option value="2 BHK">2 BHK</option>
+                                    <option value="3 BHK">3 BHK</option>
+                                    <option value="4 BHK">4 BHK</option>
+                                    <option value="Premium bungalow">Premium bungalow</option>
+                                    <option value="Other">Other</option>';
+                                    // foreach($typeCategory as $name => $value) {
+                                    //     echo '<option value="'.$value.'">'.$name.'</option>';
+                                    // }
 
                                 echo '</select>
 
@@ -196,7 +206,7 @@ if (isset($_GET['status'])) {
                         <div class="featured-project-img">';
 
                         if($value['image']['name']){
-                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['slug']['text'].'/'.$value['image']['name'].'" class="w-100">';
+                            echo '<img src="'.$imageBaseDirectory.'Project/'.$value['imageFolderName'].'/'.$value['image']['name'].'?rand='.$rand.'" class="w-100">';
                         } else {
                             echo '<img src="images/harisiddhi.jpg" class="w-100">';
                         }
