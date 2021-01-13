@@ -44,11 +44,11 @@ echo '<section class="featured-projects">
 
                     <div class="featured-project-info">
 
-                        <span class="flat-type"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
+                        <span class="flat-type">'.$value['type']['text'].'</span>
 
                         <h3 class="property-name">'.$value['title']['text'].'</h3>
 
-                        <span class="location">'.$value['type']['text'].'</span>
+                        <span class="location"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
 
                         <a href="'.$value['reraDetails']['reraLink'].'" target="_blank"><span class="area-reg">'.$value['reraDetails']['reraNumber'].'</span><a>
 

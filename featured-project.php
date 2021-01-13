@@ -216,11 +216,11 @@ if (isset($_GET['status'])) {
 
                         <div class="inner-featured-project-info">
 
-                            <span class="flat-type"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
+                            <span class="flat-type">'.$value['type']['text'].'</span>
 
                             <h3 class="property-name">'.$value['title']['text'].'</h3>
 
-                            <span class="location">'.$value['type']['text'].'</span>
+                            <span class="location"><i class="fas fa-map-marker-alt"></i> '.$value['location']['text'].'</span>
 
                             <span class="area-reg">RERA Registration No. : '.$value['reraDetails']['reraNumber'].'</span>
 
