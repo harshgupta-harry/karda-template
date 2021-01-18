@@ -103,7 +103,7 @@ if (isset($_GET['status'])) {
                                 <option value="Select Status">All</option>
                                 <option value="Under construction">Under construction</option>
                                 <option value="Completed">Completed</option>
-                                <option value="Ongoing">Ongoing</option>';
+                                <option value="Upcoming">Upcoming</option>';
 
 
                                 // foreach($statusCategory as $name => $value) {

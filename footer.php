@@ -68,7 +68,7 @@
 
                     <ul>
 
-                    <li><a href="featured-project.php?status=Ongoing">Under Construction Projects</a></li>
+                    <li><a href="featured-project.php?status=Under construction">Under Construction Projects</a></li>
                         <li><a href="featured-project.php?status=Upcoming">Upcoming Projects</a></li>
                         <li><a href="featured-project.php?status=Completed">Completed Projects</a></li>
 

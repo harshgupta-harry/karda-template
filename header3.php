@@ -150,7 +150,7 @@
 
                             <div class="col-12 col-md-3">
 
-                                <span class="regi-no">Registration No: '.$projectDetails['reraDetails']['reraNumber'].'</span>
+                                <span class="regi-no">Registration No: <a href="'.$projectDetails['reraDetails']['reraLink'].'" target="_blank">'.$projectDetails['reraDetails']['reraNumber'].'</a></span>
 
                                 <span class="rera-reg"><i class="far fa-check-circle"></i>RERA Registered</span>
 
