@@ -54,7 +54,7 @@ echo '<section class="featured-projects">
 
                         <a href="projects/'.$value['slug']['text'].'" class="button red">READ MORE <i class="fas fa-caret-right"></i></a>
 
-                        <a class="button grey enquiry" data-id="'.$value['slug']['text'].'" data-toggle="modal" data-target="#quickInquery">ENQUIRY</a>
+                        <a class="button grey enquiry" data-id="'.$value['slug']['text'].'" data-property-name="'.$value['title']['text'].'" data-toggle="modal" data-target="#quickInquery">ENQUIRY</a>
 
                     </div>
 

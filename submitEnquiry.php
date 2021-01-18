@@ -17,12 +17,14 @@ if($action == 'enquiryForm'){
 		$requirement= $_POST['requirement'];
 		
 		$projectSlug = $_POST['projectSlug'];
+		$projectName = $_POST['projectName'];
 		$postData = [
 			'name' => $name,
 			'email' => $email,
 			'message' => $message,
 			'contact_number' => $contact_number,
-			'requirement' => $requirement
+			'requirement' => $requirement,
+			'project_name' => $projectName
 			
 		];
 

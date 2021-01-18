@@ -166,7 +166,7 @@
 
                             <div class="col-12 col-md-4 text-xl-right">
 
-                                <a class="button enquiry" data-id="'.$projectDetails['slug']['text'].'" data-toggle="modal" data-target="#quickInquery">Quick enquiry <i class="fas fa-caret-right"></i></a>';
+                                <a class="button enquiry" data-id="'.$projectDetails['slug']['text'].'" data-property-name="'.$projectDetails['title']['text'].'" data-toggle="modal" data-target="#quickInquery">Quick enquiry <i class="fas fa-caret-right"></i></a>';
 								
 								if($projectDetails['brochure']['text']){
 									echo '<a href="#" class="button brouchure" data-id="'.$projectDetails['slug']['text'].'" data-toggle="modal" data-target="#ebrouchure">Request E-Brouchure <i class="fas fa-caret-right"></i></a>';

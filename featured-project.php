@@ -226,7 +226,7 @@ if (isset($_GET['status'])) {
 
                             <a href="projects/'.$value['slug']['text'].'" class="button red">READ MORE <i class="fas fa-caret-right"></i></a>
 
-                            <a class="button grey mr-0 enquiry" data-id="'.$value['slug']['text'].'" data-toggle="modal" data-target="#quickInquery">Enquiry</a>
+                            <a class="button grey mr-0 enquiry" data-id="'.$value['slug']['text'].'" data-property-name="'.$value['title']['text'].'" data-toggle="modal" data-target="#quickInquery">Enquiry</a>
 
                         </div>
 
