@@ -10,7 +10,7 @@ echo '<section class="company-work">
                 if($data[0] != 'true'){
                     for ($i = 0; $i < $count; $i++) {
 
-        echo '<li class="col-12 col-md-6 col-lg">
+        echo '<li class="col-12 col-sm-4 col-md-3 col-lg-2">
 
             <div class="work-block">
 

@@ -175,8 +175,8 @@ Header
 .media-section .section-title h2 { text-align: left; }
 
 .company-work { padding: 50px 0; }
-.company-work ul li .work-block { text-align: center; border-right: 1px solid rgb(38 40 43 / 0.2); }
-.company-work ul li:last-child .work-block { border-right: none; }
+.company-work ul li .work-block { text-align: center; border-right: 1px solid rgb(38 40 43 / 0.2); padding: 30px 0; }
+.company-work ul li:nth-child(5n) .work-block { border-right: none; }
 .company-work ul li .work-block .work-icon { margin: auto; margin-bottom: 30px; width: 90px; height: 90px; }
 .company-work ul li .work-block .work-icon img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 .company-work ul li .work-block span { font-size: 18px; text-transform: uppercase; font-weight: 600; color: #26282b; margin-bottom: 16px; display: block; line-height: 1; }
