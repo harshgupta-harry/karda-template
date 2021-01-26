@@ -2,7 +2,7 @@
 $data = $database->getReference('template/userData/stats/data/arrayOne/data')->getValue();
 echo '<section class="company-work">
 
-<div class="container">
+<div class="container-fluid">
 
     <ul class="row">';
 
@@ -10,7 +10,7 @@ echo '<section class="company-work">
                 if($data[0] != 'true'){
                     for ($i = 0; $i < $count; $i++) {
 
-        echo '<li class="col-12 col-md-6 col-lg-3">
+        echo '<li class="col-12 col-md-6 col-lg">
 
             <div class="work-block">
 
