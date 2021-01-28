@@ -65,7 +65,7 @@ $fileName = basename($_SERVER['PHP_SELF']);
                                         <p>BSE - <span id="stock-price-bse"> 37,981.63</spam> <i class="fas fa-caret-up price-up"></i></p>
                                     </div> -->
                                     <div class="stock">
-                                        <p>NSE - <span id="stock-price-nse"> 11,227.55</span> <i id="stock-price-nse-icon" class=""></i></p>
+                                        <p>NSE - <span id="stock-price-nse"></span> <i id="stock-price-nse-icon" class=""></i></p>
                                     </div>
                                 </div>
                             </div>
@@ -147,6 +147,6 @@ $fileName = basename($_SERVER['PHP_SELF']);
                             <li><a href="career.php">Careers</a></li>
                             <li><a href="contact.php">Contact Us</a></li>
                         </ul>
-                    </div>
+                    </div> 
                 </nav>
             </div>
